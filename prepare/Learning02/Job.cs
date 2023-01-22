@@ -2,6 +2,7 @@ using System;
 
 public class Job
 {
+    // this is a list of attributes/variables
     public string _company = "";
     public string _jobTitle = "";
     public int _startYear;
