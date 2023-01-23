@@ -6,12 +6,15 @@ class Journal
     public string _fileLocation = "";
     public string _journalName = "";
 
+
+    // constructing class. 
     public List<Entry> _entries = new List<Entry>();
 
-    public Journal()
-    {
+    // Constructor
+    // public Journal()
+    // {
         
-    }
+    // }
 
     public void saveFile(string filePath)
     {
@@ -27,10 +30,13 @@ class Journal
         }
     }
 
-    public void Display()
+    public string Display()
     {
-        // Console.WriteLine($"{}");
+        List<string> entries = new List<string>();
+        foreach (Entry entry in _entries)
+        {
+           entries.Add( entry.Display() );
+        }
+        return string.Join(',', entries);
     }
-
-
 }

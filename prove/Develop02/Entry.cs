@@ -2,10 +2,11 @@ using System;
 
 class Entry
 {
+    
     // list of attributes/variables
     public string _userInput = "";
     public string _date = "";
-    public Prompt _prompt;
+    // public Prompt _prompt;
 
     public Entry()
     {
