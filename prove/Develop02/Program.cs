@@ -17,8 +17,8 @@ class Program
         {
             Console.WriteLine("1. Write a new entry");
             Console.WriteLine("2. Display the journal");
-            Console.WriteLine("3. Load the journal from a file");
-            Console.WriteLine("4. Save the journal to a file");
+            Console.WriteLine("3. Save the journal to a file");
+            Console.WriteLine("4. Load the journal from a file");
             Console.WriteLine("5. Quit Program");
             Console.WriteLine("What would you like to do?");
 
@@ -51,26 +51,16 @@ class Program
             }
             else if (userInt == 3)
             {
+                // todo prompt user for a journal name
                 Console.WriteLine("What is the filename to load? ");
                
             }
             else if (userInt == 4)
             {
                 Console.WriteLine("What is the filename? ");
-               
+            
             }
         }
         while (userInt != 5);
-
-
-        // Console.WriteLine("Hello Develop02 World!");
-        // Entry entry = new Entry();
-        // entry._date = "today";
-        // Console.WriteLine(entry.Display());
-
-        // Entry entry2 = new Entry();
-        // entry2._date = "tomorrow";
-        // Console.WriteLine(entry2.Display());
-
     }
 }
