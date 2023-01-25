@@ -6,53 +6,12 @@ class Program
     static List<Prompt> generatePrompts()
     {
         // List = journalQuestions
-        List<Prompt> journalQuestions = new List<Prompt>();
-
-        // Questions
-        Prompt questionOne = new Prompt();
-        questionOne._userPrompt = "Write about what happened today that was fun";
-        journalQuestions.Add(questionOne);
-
-        Prompt questionTwo = new Prompt();
-        questionTwo._userPrompt = "what was something that your wife did that was great!";
-        journalQuestions.Add(questionTwo);
-
-        Prompt questionThree = new Prompt();
-        questionThree._userPrompt = "write about your dad";
-        journalQuestions.Add(questionThree);
-
-        Prompt questionFour = new Prompt();
-        questionFour._userPrompt = "write about your evening.";
-        journalQuestions.Add(questionFour);
-
-        Prompt questionFive = new Prompt();
-        questionFive._userPrompt = "Who was the most interesting person I interacted with today?";
-        journalQuestions.Add(questionFive);
-
-        Prompt questionSix = new Prompt();
-        questionSix._userPrompt = "What was the best part of my day?";
-        journalQuestions.Add(questionSix);
-
-        Prompt questionSeven = new Prompt();
-        questionSeven._userPrompt = "How did I see the hand of the Lord in my life today?";
-        journalQuestions.Add(questionSeven);
-
-        Prompt questionEight = new Prompt();
-        questionEight._userPrompt = "What was the strongest emotion I felt today?";
-        journalQuestions.Add(questionEight);
-
-        Prompt questionNine = new Prompt();
-        questionNine._userPrompt = "If I had one thing I could do over today, what would it be?";
-        journalQuestions.Add(questionNine);
-
-
-        return journalQuestions;
     }
     static void Main(string[] args)
     {
         int userInt; // this is what the user types in that is being used in while argument
         List<Prompt> prompts = generatePrompts();
-        Random rnd = new Random(); //initializing the random method in C#
+
 
         Console.WriteLine("Welcome to you're digital journal.");
         Journal userJournal = new Journal(); //invoking Journal class to use here as an instance
@@ -72,7 +31,7 @@ class Program
 
             if (userInt == 1) // using what the user typed in
             {
-                prompts[rnd.Next(0, prompts.Count)].Display();
+                //TODO call getQuestion here.
                 string question1Answer = Console.ReadLine(); //assigning to a variable for question 1
 
                 Entry entry = new Entry(); //invoking Entry class to use here as an instance
