@@ -7,7 +7,7 @@ class PromptGenerator
 
     public PromptGenerator()
     {
-        // Questions
+        // Questions for _quesions list
         _questions.Add("Write about what happened today that was fun");
         _questions.Add("what was something that your wife did that was great!");
         _questions.Add("write about your dad");

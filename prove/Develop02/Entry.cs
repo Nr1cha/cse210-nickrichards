@@ -6,7 +6,7 @@ class Entry
     // list of attributes/variables
     public string _userInput = "";
     public string _date = "";
-    // public Prompt _prompt;
+    public string _prompt = "";
 
     public Entry()
     {
@@ -14,10 +14,7 @@ class Entry
     }
     public string Display()
     {
-        // Console.WriteLine($"{_date}");
-        // TODO add prompt to return 
-        // Console.WriteLine($"{_userInput}");
-        return $"{_date} {_userInput}";
+        return $"{_date} \n{_prompt} \n{_userInput} \n";
     }
 
 }

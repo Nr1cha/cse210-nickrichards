@@ -3,14 +3,10 @@ using System.IO;
 
 class Program
 {
-    static List<Prompt> generatePrompts()
-    {
-        // List = journalQuestions
-    }
     static void Main(string[] args)
     {
         int userInt; // this is what the user types in that is being used in while argument
-        List<Prompt> prompts = generatePrompts();
+        PromptGenerator generator = new PromptGenerator();
 
 
         Console.WriteLine("Welcome to you're digital journal.");
@@ -31,17 +27,17 @@ class Program
 
             if (userInt == 1) // using what the user typed in
             {
-                //TODO call getQuestion here.
+                string prompt = generator.getQuestion();
+                Console.WriteLine(prompt);
                 string question1Answer = Console.ReadLine(); //assigning to a variable for question 1
 
                 Entry entry = new Entry(); //invoking Entry class to use here as an instance
                 entry._userInput = question1Answer;
                 entry._date = new DateOnly().ToString();
+                entry._prompt = prompt;
 
-                // TODO: Add the current Prompt to your entry
-                // TODO: Inside of your entry class, add the prompt to your display function
-                Console.Write("entry: ");
-                Console.Write(entry.Display());
+                Console.Write("Entry: ");
+                Console.WriteLine(entry.Display());
 
                 userJournal._entries.Add(entry);
                 
