@@ -11,13 +11,15 @@ class Journal
     public List<Entry> _entries = new List<Entry>();
 
     // Constructor
-    // public Journal()
-    // {
-        
-    // }
+    public Journal()
+    {
+
+    }
 
     public void saveFile(string filePath)
     {
+        Entry currentJournal = new Entry();
+
         using (StreamWriter outputFile = new StreamWriter(filePath))
         {
             outputFile.WriteLine($"{_journalName}");
