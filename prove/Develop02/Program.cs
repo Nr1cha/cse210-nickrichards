@@ -33,7 +33,7 @@ class Program
 
                 Entry entry = new Entry(); //invoking Entry class to use here as an instance
                 entry._userInput = question1Answer;
-                entry._date = new DateOnly().ToString();
+                entry._date = DateTime.Now.ToString();
                 entry._prompt = prompt;
 
                 Console.Write("Entry: ");
