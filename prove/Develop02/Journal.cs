@@ -4,7 +4,6 @@ class Journal
 {
     // list of attributes/variables
     public string _fileLocation = "";
-    public string _journalName = "";
 
     public string _fileName2 = "";
 
@@ -23,7 +22,6 @@ class Journal
     {
         using (StreamWriter outputFile = new StreamWriter(filePath))
         {
-            outputFile.WriteLine($"Journal Name: {_journalName}");
 
             foreach (Entry entry in _entries)
             {

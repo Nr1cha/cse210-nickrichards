@@ -47,23 +47,19 @@ class Program
             }
             else if (userInt == 2)
             {
-                Console.WriteLine("Here is your journal...");
+                Console.WriteLine($"Here is your journal {userJournal._fileLocation}");
                 string output = userJournal.Display();
                 Console.WriteLine(output);
-
             }
             else if (userInt == 3)
             {
-                // todo prompt user for a journal name
                 Console.WriteLine("What is the filename to save? ");
                 string input3 = Console.ReadLine();
+                userJournal._fileLocation = input3;
                 userJournal.saveFile(input3);
-
-
             }
             else if (userInt == 4)
             {
-                // Journal loadJournal = new Journal();
                 // todo load the file
                 Console.WriteLine("What is the filename to load? ");
                 string input4 = Console.ReadLine();
