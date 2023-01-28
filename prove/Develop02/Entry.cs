@@ -2,7 +2,7 @@ using System;
 
 class Entry
 {
-    
+
     // list of attributes/variables
     public string _userInput = "";
     public string _date = "";
@@ -10,11 +10,11 @@ class Entry
 
     public Entry()
     {
-        
+
     }
     public string Display()
     {
-        return $"{_date} \n{_prompt} \n{_userInput} \n";
+        return $"Date: {_date} \nPrompt: {_prompt} \nEntry: {_userInput} \n";
     }
 
 }

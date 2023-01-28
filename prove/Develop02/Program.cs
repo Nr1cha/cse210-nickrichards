@@ -39,26 +39,35 @@ class Program
                 Console.Write("Entry: ");
                 Console.WriteLine(entry.Display());
 
-                userJournal._entries.Add(entry);
-                
+                Console.WriteLine("Testing - print journal before adding");
+                Console.WriteLine(userJournal.Display());
+
+                userJournal._entries.Add(entry); //adding entries to userJournal
+
             }
             else if (userInt == 2)
             {
                 Console.WriteLine("Here is your journal...");
                 string output = userJournal.Display();
                 Console.WriteLine(output);
-             
+
             }
             else if (userInt == 3)
             {
                 // todo prompt user for a journal name
-                Console.WriteLine("What is the filename to load? ");
-               
+                Console.WriteLine("What is the filename to save? ");
+                string input3 = Console.ReadLine();
+                userJournal.saveFile(input3);
+
+
             }
             else if (userInt == 4)
             {
-                Console.WriteLine("What is the filename? ");
-            
+                // Journal loadJournal = new Journal();
+                // todo load the file
+                Console.WriteLine("What is the filename to load? ");
+                string input4 = Console.ReadLine();
+                userJournal.loadFile(input4);
             }
         }
         while (userInt != 5);
