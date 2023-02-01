@@ -21,5 +21,6 @@ class Program
         Console.WriteLine($"3rd constructor, passing 1 and 3: {f4.GetFractionString()}");
         Console.WriteLine($"3rd constructor, passing 1 and 3: {f4.GetDecimalValue()}");
 
+        
     }
 }

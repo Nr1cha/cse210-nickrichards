@@ -6,7 +6,7 @@ public class Fraction
     private int _topNum;
     private int _bottomNum;
 
-// CONSTRUCTORS
+    // CONSTRUCTORS
     public Fraction()
     {
         _topNum = 1;
@@ -26,7 +26,29 @@ public class Fraction
     }
 
 
-// METHODS
+    // GETTERS AND SETTERS
+    public int GetTop()
+    {
+        return _topNum;
+    }
+
+    public void SetTop(int top)
+    {
+        _topNum = top;
+    }
+
+    public int GetBottom()
+    {
+        return _bottomNum;
+    }
+
+    public void SetBottom(int bottom)
+    {
+        _bottomNum = bottom;
+    }
+
+
+    // METHODS
     public string GetFractionString()
     {
         string text = $"{_topNum}/{_bottomNum}";
@@ -37,5 +59,4 @@ public class Fraction
     {
         return (double)_topNum / (double)_bottomNum;
     }
-
 }
