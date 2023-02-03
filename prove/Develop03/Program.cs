@@ -4,12 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        // todo have the scripture long string stored here. 
         // invoking instances of the other classes. 
-        Reference scriptureReference = new Reference();
-        Word singleWord = new Word();
-        Scripture scriptureList = new Scripture();
+        Console.Clear();
+        Console.WriteLine("Scripture Reference");
+        Console.WriteLine("then the massive scripture list paragraph.");
+        Console.WriteLine("Press enter to continue or type 'quit' to finish.");
 
-        Console.WriteLine("Hello Develop03 World!");
     }
 }
