@@ -10,10 +10,14 @@ class Reference
 
     }
 
+    public void DisplayReference()
+    {
+        
+    }
+
 
 
     // getters and setters
-
     public string GetReference()
     {
         return _referenceScripture;
