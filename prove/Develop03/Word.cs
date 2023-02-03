@@ -1,6 +1,12 @@
 using System;
 
-class Word
+public class Word
 {
+    private List<verseWords>;
 
+    // constructor
+    public Word()
+    {
+
+    }
 }
