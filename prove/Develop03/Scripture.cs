@@ -3,12 +3,13 @@ using System;
 class Scripture
 {
     private List<string> stringThing = new List<string>();
-    
+
 
 
     public Scripture(string stringThing) // CONSTRUCTOR
     {
         string[] wordArray = stringThing.Split(' ');
+
         List<string> wordList = wordArray.ToList(); //turning it into a list of strings
         this.stringThing = wordList;
     }
@@ -22,6 +23,12 @@ class Scripture
     public void SetScripture(List<string> pString) //SET
     {
         stringThing = pString;
+    }
+
+    public void DisplayScripture()
+    {
+        foreach (string _word in stringThing)
+            Console.Write($"{_word} ");
     }
 
 }
