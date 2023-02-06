@@ -28,7 +28,9 @@ class Scripture
     public void DisplayScripture()
     {
         foreach (string _word in stringThing)
+        {
             Console.Write($"{_word} ");
+        }
     }
 
 }
