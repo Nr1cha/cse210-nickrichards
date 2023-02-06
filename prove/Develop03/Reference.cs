@@ -12,7 +12,7 @@ class Reference
 
     public void DisplayReference()
     {
-        
+        Console.WriteLine("test");
     }
 
 
