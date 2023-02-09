@@ -10,11 +10,20 @@ class Scripture
     {
         string[] wordArray = stringThing.Split(' ');
         List<Word> wordList = new List<Word>();
+
         foreach(string currentWord in wordArray)
         {
             wordList.Add(new Word(currentWord));
         };
         this.stringThing = wordList;
+
+        //todo 1 
+        // looping through each word
+        foreach(string c in wordArray)
+        {
+            Console.WriteLine(c);
+        }
+
     }
 
     // MAKE GETTERS AND SETTERS

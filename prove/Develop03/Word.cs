@@ -18,19 +18,31 @@ public class Word
 
     public void ReplaceWords()
     {
-        for (int i = 0; i < scriptureWords.wordList.Count; i++)
-        {
-            string wordToChange = scriptureWords.wordList[i];
+        // for (int i = 0; i < scriptureWords.wordList.Count; i++)
+        // {
+        //     string wordToChange = scriptureWords.wordList[i];
 
-            if (wordToChange == scriptureWords.wordList[i])
-            {
-                scriptureWords.wordList[i] = "_";
-            }
+        //     if (wordToChange == scriptureWords.wordList[i])
+        //     {
+        //         scriptureWords.wordList[i] = "_";
+        //     }
+        // }
+
+        // foreach (string replacedWord in scriptureWords.wordList)
+        // {
+        //     Console.WriteLine(replacedWord);
+        // }
+    }
+
+    public Boolean isHidden
+    {
+        get
+        {
+            return _isHidden;
         }
-
-        foreach (string replacedWord in scriptureWords.wordList)
+        set
         {
-            Console.WriteLine(replacedWord);
+            _isHidden = value;
         }
     }
 
