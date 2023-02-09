@@ -9,7 +9,7 @@ class Scripture
     public Scripture(string stringThing) // CONSTRUCTOR
     {
         string[] wordArray = stringThing.Split(' ');
-        List<Word> wordList = new List<Word>();
+        List<Word> wordList = new List<Word>(); // INVOKING MY WORD CLASS
 
         foreach (string currentWord in wordArray)
         {
@@ -17,6 +17,11 @@ class Scripture
         };
         _stringThing = wordList;
     }
+
+    // public Scripture(string bigScripture)
+    // {
+
+    // } 
 
     // MAKE GETTERS AND SETTERS
     public List<Word> StringThing

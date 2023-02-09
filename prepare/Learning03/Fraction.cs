@@ -49,13 +49,13 @@ public class Fraction
 
 
     // METHODS
-    public string GetFractionString()
+    public string GetFractionString() //formatting the output
     {
         string text = $"{_topNum}/{_bottomNum}";
         return text;
     }
 
-    public double GetDecimalValue()
+    public double GetDecimalValue() // logic to the purpos
     {
         return (double)_topNum / (double)_bottomNum;
     }
