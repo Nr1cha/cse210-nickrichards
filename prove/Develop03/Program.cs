@@ -27,5 +27,11 @@ class Program
             Console.WriteLine("thanks for playing");
             System.Environment.Exit(0);
         }
+        else if (userInput == "")
+        {
+            // todo set isHidden to "true" for one word
+            thing.RemoveRandomWord();
+            thing.DisplayScripture();
+        }
     }
 }

@@ -2,7 +2,7 @@ using System;
 
 class Scripture
 {
-    private List<Word> stringThing = new List<Word>();
+    private List<Word> _stringThing = new List<Word>();
 
 
 
@@ -11,19 +11,11 @@ class Scripture
         string[] wordArray = stringThing.Split(' ');
         List<Word> wordList = new List<Word>();
 
-        foreach(string currentWord in wordArray)
+        foreach (string currentWord in wordArray)
         {
             wordList.Add(new Word(currentWord));
         };
-        this.stringThing = wordList;
-
-        //todo 1 
-        // looping through each word
-        foreach(string c in wordArray)
-        {
-            Console.WriteLine(c);
-        }
-
+        _stringThing = wordList;
     }
 
     // MAKE GETTERS AND SETTERS
@@ -31,19 +23,34 @@ class Scripture
     {
         get
         {
-            return stringThing;
+            return _stringThing;
         }
         set
         {
-            stringThing = value;
+            _stringThing = value;
         }
+    }
+
+    // function for remove random word
+    public void RemoveRandomWord()
+    {
+        //todo 1 
+        // looping through each word
+        Random random = new Random();
+        int randomNumber = random.Next(1, _stringThing.Count);
+        _stringThing[randomNumber].IsHidden = true;
+        // foreach (Word c in _stringThing)
+        // {
+        //     c.IsHidden = true;
+        //     Console.WriteLine(c.Display(randomNumber));
+        // }
     }
 
 
     // DISPLAYING STUFF FROM THE LIST
     public void DisplayScripture()
     {
-        foreach (Word currentWord in stringThing)
+        foreach (Word currentWord in _stringThing)
         {
             Console.Write($"{currentWord.Display()} ");
         }
