@@ -9,22 +9,23 @@ class Scripture
     public Scripture(string stringThing) // CONSTRUCTOR
     {
         string[] wordArray = stringThing.Split(' ');
-
         List<string> wordList = wordArray.ToList(); //turning it into a list of strings
         this.stringThing = wordList;
     }
 
     // MAKE GETTERS AND SETTERS
-    public List<string> GetStrings() //GET
+    public List<string> StringThing
     {
-        return stringThing;
+        get
+        {
+            return stringThing;
+        }
+        set
+        {
+            stringThing = value;
+        }
     }
-
-    public void SetScripture(List<string> pString) //SET
-    {
-        stringThing = pString;
-    }
-
+// DISPLAYING STUFF FROM THE LIST
     public void DisplayScripture()
     {
         foreach (string _word in stringThing)
