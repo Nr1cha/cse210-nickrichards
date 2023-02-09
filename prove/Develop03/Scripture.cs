@@ -2,19 +2,23 @@ using System;
 
 class Scripture
 {
-    private List<string> stringThing = new List<string>();
+    private List<Word> stringThing = new List<Word>();
 
 
 
     public Scripture(string stringThing) // CONSTRUCTOR
     {
         string[] wordArray = stringThing.Split(' ');
-        List<string> wordList = wordArray.ToList(); //turning it into a list of strings
+        List<Word> wordList = new List<Word>();
+        foreach(string currentWord in wordArray)
+        {
+            wordList.Add(new Word(currentWord));
+        };
         this.stringThing = wordList;
     }
 
     // MAKE GETTERS AND SETTERS
-    public List<string> StringThing
+    public List<Word> StringThing
     {
         get
         {
@@ -25,12 +29,14 @@ class Scripture
             stringThing = value;
         }
     }
-// DISPLAYING STUFF FROM THE LIST
+
+
+    // DISPLAYING STUFF FROM THE LIST
     public void DisplayScripture()
     {
-        foreach (string _word in stringThing)
+        foreach (Word currentWord in stringThing)
         {
-            Console.Write($"{_word} ");
+            Console.Write($"{currentWord.Display()} ");
         }
     }
 

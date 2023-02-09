@@ -6,16 +6,15 @@ public class Word
     // NEW INSTANCE OF SCRIPTURE CLASS
     List<string> scriptureWords1 = new List<string>();
     Scripture scriptureWords;
-
-    public Word()
+    string _word = "";
+    Boolean _isHidden = false;
+    public Word(string word)
     {
-        scriptureWords = new Scripture(scriptureWords1);
 
-        // constructor
+        this._word = word;
     }
 
-    // iterate through a list
-    // take list from the scripture class
+
 
     public void ReplaceWords()
     {
@@ -32,6 +31,19 @@ public class Word
         foreach (string replacedWord in scriptureWords.wordList)
         {
             Console.WriteLine(replacedWord);
+        }
+    }
+
+    public string Display()
+    {
+        string outPutWord = "";
+
+        if (_isHidden)
+        {
+            foreach (char letter in _word)
+            {
+                outPutWord = outPutWord+"_";
+            }
         }
     }
 }
