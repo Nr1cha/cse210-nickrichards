@@ -22,11 +22,13 @@ class Program
         // todo get user input
         Console.Clear();
 
-        Console.Write("Welcome to the Scripture Memorizor program!");
+        Console.WriteLine("Welcome to the Scripture Memorizor program!");
         // todo ask if user whants to select their own scripture. 
 
         Console.WriteLine("Do you want to have me show you a scripture or would you like to provide your own scripture?");
-        Console.WriteLine("Press 1 for viewing a scripture. Press 2 for making your own.");
+        Console.WriteLine("Press 1 for viewing a scripture.");
+        Console.WriteLine("Press 2 for making your own.");
+
         userSelection = int.Parse(Console.ReadLine());
 
         if (userSelection == 2)
@@ -36,7 +38,7 @@ class Program
             Console.WriteLine("Please type in the name of a scripture book. e.g. 'alma, nephi, etc..'");
             userInputBookName = Console.ReadLine();
 
-            Console.WriteLine("Please type in a single chapter number:");
+            Console.WriteLine("Please type in a chapter number:");
             userInputChaptNum = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Please provide the start verse number:");
@@ -75,7 +77,7 @@ class Program
         do
         {
             Console.WriteLine("");
-            Console.WriteLine("\nPress enter to continue or type 'quit' to finish: \n");
+            Console.WriteLine("\nPress ENTER to make words disappear or type 'quit' at anytime to finish: \n");
             userInput = Console.ReadLine();
             if (userInput == "quit")
             {
