@@ -14,24 +14,34 @@ class Program
         Console.Clear();
         Console.WriteLine($"{staticReference}");
         // Console.WriteLine($"{staticScripture} \n");
-        Console.WriteLine("Press enter to continue or type 'quit' to finish: \n");
 
         // Console.Write(string.Join(" ", thing));
         thing.DisplayScripture();
 
 
         // USER INPUT FOR TYPING TO THE CONSOLE
-        string userInput = Console.ReadLine();
-        if (userInput == "quit")
+        string userInput;
+        do
         {
-            Console.WriteLine("thanks for playing");
-            System.Environment.Exit(0);
-        }
-        else if (userInput == "")
-        {
-            // todo set isHidden to "true" for one word
-            thing.RemoveRandomWord();
-            thing.DisplayScripture();
-        }
+            Console.WriteLine("");
+            Console.WriteLine("\n Press enter to continue or type 'quit' to finish: \n");
+            userInput = Console.ReadLine();
+            if (userInput == "quit")
+            {
+                Console.WriteLine("thanks for playing");
+                System.Environment.Exit(0);
+            }
+            else if (thing.ModifiedStringThing.Count == 0)
+            {
+                System.Environment.Exit(0);
+            }
+            else if (userInput == "") // if its ENTER
+            {
+                // todo set isHidden to "true" for one word
+                thing.RemoveRandomWord(); // remove a word when ENTER is pressed
+                Console.Clear();
+                thing.DisplayScripture(); // this shows the scripture
+            }
+        } while (userInput != "quit");
     }
 }

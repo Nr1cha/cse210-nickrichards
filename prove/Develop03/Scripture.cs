@@ -2,19 +2,26 @@ using System;
 
 class Scripture
 {
-    private List<Word> _stringThing = new List<Word>();
-
+    private List<Word> _stringThing = new List<Word>(); //OG word list
+    private List<Word> _modifiedStringThing = new List<Word>();
 
 
     public Scripture(string stringThing) // CONSTRUCTOR
     {
         string[] wordArray = stringThing.Split(' ');
         List<Word> wordList = new List<Word>(); // INVOKING MY WORD CLASS
+        List<Word> remainingWordsList = new List<Word>(); // remaining words list
+
 
         foreach (string currentWord in wordArray)
         {
-            wordList.Add(new Word(currentWord));
+            // adding to both lists
+            Word wordInstance = new Word(currentWord);
+            wordList.Add(wordInstance);
+            remainingWordsList.Add(wordInstance);
+
         };
+        _modifiedStringThing = remainingWordsList;
         _stringThing = wordList;
     }
 
@@ -24,6 +31,19 @@ class Scripture
     // } 
 
     // MAKE GETTERS AND SETTERS
+    public List<Word> ModifiedStringThing
+    {
+        get
+        {
+            return _modifiedStringThing;
+        }
+        set
+        {
+            _modifiedStringThing = value;
+        }
+    }
+
+
     public List<Word> StringThing
     {
         get
@@ -41,14 +61,17 @@ class Scripture
     {
         //todo 1 
         // looping through each word
-        Random random = new Random();
-        int randomNumber = random.Next(1, _stringThing.Count);
-        _stringThing[randomNumber].IsHidden = true;
-        // foreach (Word c in _stringThing)
-        // {
-        //     c.IsHidden = true;
-        //     Console.WriteLine(c.Display(randomNumber));
-        // }
+        if (_modifiedStringThing.Count > 0)
+        {
+            Random random = new Random();
+            int randomNumber = random.Next(0, _modifiedStringThing.Count);
+            Word currentWord = _modifiedStringThing[randomNumber];
+            currentWord.IsHidden = true;
+
+
+            //word that is looked at to be removed
+            _modifiedStringThing.Remove(currentWord);
+        }
     }
 
 
@@ -57,7 +80,7 @@ class Scripture
     {
         foreach (Word currentWord in _stringThing)
         {
-            Console.Write($"{currentWord.Display()} ");
+            Console.Write($"{currentWord.Display()} "); //this shows the scripture
         }
     }
 
