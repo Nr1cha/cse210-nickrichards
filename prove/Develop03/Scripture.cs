@@ -2,16 +2,16 @@ using System;
 
 class Scripture
 {
-    private List<Word> _stringThing = new List<Word>(); //OG word list
-    private List<Word> _modifiedStringThing = new List<Word>();
+    private List<Word> _scriptureList = new List<Word>(); //OG word list
+    private List<Word> _modifiedScriptureList = new List<Word>();
     private Reference _reference;
 
 
-    public Scripture(Reference reference, string stringThing) // CONSTRUCTOR
+    public Scripture(Reference reference, string scriptureString) // CONSTRUCTOR
     {
         _reference = reference;
 
-        string[] wordArray = stringThing.Split(' ');
+        string[] wordArray = scriptureString.Split(' ');
         List<Word> wordList = new List<Word>(); // INVOKING MY WORD CLASS
         List<Word> remainingWordsList = new List<Word>(); // remaining words list
 
@@ -21,33 +21,33 @@ class Scripture
             wordList.Add(wordInstance); // adding to both lists
             remainingWordsList.Add(wordInstance); // adding to both lists
         };
-        _modifiedStringThing = remainingWordsList;
-        _stringThing = wordList;
+        _modifiedScriptureList = remainingWordsList;
+        _scriptureList = wordList;
     }
 
 
     // MAKE GETTERS AND SETTERS
-    public List<Word> ModifiedStringThing
+    public List<Word> ModifiedScriptureList
     {
         get
         {
-            return _modifiedStringThing;
+            return _modifiedScriptureList;
         }
         set
         {
-            _modifiedStringThing = value;
+            _modifiedScriptureList = value;
         }
     }
 
-    public List<Word> StringThing
+    public List<Word> ScriptureList
     {
         get
         {
-            return _stringThing;
+            return _scriptureList;
         }
         set
         {
-            _stringThing = value;
+            _scriptureList = value;
         }
     }
 
@@ -57,12 +57,12 @@ class Scripture
         int numberOfWordsToRemove = random.Next(1, maxNumberOfWordsToRemove);
         for (int i = 0; i < numberOfWordsToRemove; i++)
         {
-            if (_modifiedStringThing.Count > 0)
+            if (_modifiedScriptureList.Count > 0)
             {
-                int randomNumber = random.Next(0, _modifiedStringThing.Count);
-                Word currentWord = _modifiedStringThing[randomNumber];
+                int randomNumber = random.Next(0, _modifiedScriptureList.Count);
+                Word currentWord = _modifiedScriptureList[randomNumber];
                 currentWord.IsHidden = true;
-                _modifiedStringThing.Remove(currentWord);
+                _modifiedScriptureList.Remove(currentWord);
             }
         }
     }
@@ -71,7 +71,7 @@ class Scripture
     public void DisplayScripture()
     {
         Console.WriteLine($"{_reference.DisplayReference()}\n");
-        foreach (Word currentWord in _stringThing)
+        foreach (Word currentWord in _scriptureList)
         {
             Console.Write($"{currentWord.Display()} "); //this shows the scripture
         }
