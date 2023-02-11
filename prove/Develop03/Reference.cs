@@ -3,16 +3,37 @@ using System;
 class Reference
 {
     private string _referenceScripture;
+    private string _book;
+    private int _chapter;
+    private int _verse;
+    private int? _verse2;
 
     // CONSTRUCTOR
-    public Reference()
+    public Reference(string book, int chapter, int verse) // single verse
     {
-        
+        _book = book;
+        _chapter = chapter;
+        _verse = verse;
     }
 
-    public void DisplayReference()
+    public Reference(string book, int chapter, int verse, int verse2) // more than one verse
     {
-        Console.WriteLine("test");
+        _book = book;
+        _chapter = chapter;
+        _verse = verse;
+        _verse2 = verse2;
+    }
+
+    public string DisplayReference()
+    {
+        if (_verse2 != null)
+        {
+            return ($"{_book} {_chapter}: {_verse} - {_verse2}");
+        }
+        else
+        {
+            return ($"{_book} {_chapter}: {_verse}");
+        }
     }
 
 

@@ -4,10 +4,13 @@ class Scripture
 {
     private List<Word> _stringThing = new List<Word>(); //OG word list
     private List<Word> _modifiedStringThing = new List<Word>();
+    private Reference _reference;
 
 
-    public Scripture(string stringThing) // CONSTRUCTOR
+    public Scripture(Reference reference, string stringThing) // CONSTRUCTOR
     {
+        _reference = reference;
+
         string[] wordArray = stringThing.Split(' ');
         List<Word> wordList = new List<Word>(); // INVOKING MY WORD CLASS
         List<Word> remainingWordsList = new List<Word>(); // remaining words list
@@ -22,9 +25,6 @@ class Scripture
         _stringThing = wordList;
     }
 
-    // public Scripture(string bigScripture)
-    // {
-    // } 
 
     // MAKE GETTERS AND SETTERS
     public List<Word> ModifiedStringThing
@@ -70,6 +70,7 @@ class Scripture
     // DISPLAYING STUFF FROM THE LIST
     public void DisplayScripture()
     {
+        Console.WriteLine($"{_reference.DisplayReference()}\n");
         foreach (Word currentWord in _stringThing)
         {
             Console.Write($"{currentWord.Display()} "); //this shows the scripture
