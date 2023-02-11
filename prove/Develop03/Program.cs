@@ -8,15 +8,12 @@ class Program
         // variables 
         string staticReference = "Alma 37: 37";
         string staticScripture = "Counsel with the Lord in all thy doings, and he will direct thee for good; yea, when thou liest down at night lie down unto the Lord, that he may watch over you in your sleep; and when thou risest in the morning let thy heart be full of thanks unto God; and if ye do these things, ye shall be lifted up at the last day. ";
-        Scripture thing = new Scripture(staticScripture); // invoking the scripture class to take staticScripture
+        Scripture currentScripture = new Scripture(staticScripture); // invoking the scripture class to take staticScripture
 
         // OUTPUT
         Console.Clear();
         Console.WriteLine($"{staticReference}");
-        // Console.WriteLine($"{staticScripture} \n");
-
-        // Console.Write(string.Join(" ", thing));
-        thing.DisplayScripture();
+        currentScripture.DisplayScripture();
 
 
         // USER INPUT FOR TYPING TO THE CONSOLE
@@ -31,16 +28,16 @@ class Program
                 Console.WriteLine("thanks for playing");
                 System.Environment.Exit(0);
             }
-            else if (thing.ModifiedStringThing.Count == 0)
+            else if (currentScripture.ModifiedStringThing.Count == 0)
             {
                 System.Environment.Exit(0);
             }
             else if (userInput == "") // if its ENTER
             {
-                // todo set isHidden to "true" for one word
-                thing.RemoveRandomWord(); // remove a word when ENTER is pressed
+                currentScripture.RemoveRandomWords(5); // remove a word when ENTER is pressed
                 Console.Clear();
-                thing.DisplayScripture(); // this shows the scripture
+                Console.WriteLine($"{staticReference}");
+                currentScripture.DisplayScripture(); // this shows the scripture
             }
         } while (userInput != "quit");
     }
