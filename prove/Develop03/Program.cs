@@ -19,12 +19,9 @@ class Program
 
 
         // OUTPUT
-        // todo get user input
         Console.Clear();
 
         Console.WriteLine("Welcome to the Scripture Memorizor program!");
-        // todo ask if user whants to select their own scripture. 
-
         Console.WriteLine("Do you want to have me show you a scripture or would you like to provide your own scripture?");
         Console.WriteLine("Press 1 for viewing a scripture.");
         Console.WriteLine("Press 2 for making your own.");
