@@ -18,7 +18,14 @@ public void SetStudentName(string studentName)
 {
     _studentName = studentName;
 }
-
+public string GetTopic()
+{
+    return _topic;
+}
+public void SetTopic(string topic)
+{
+    _topic = topic;
+}
 
 }
 
