@@ -2,8 +2,10 @@ using System;
 
 class Program
 {
+
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Learning04 World!");
+        Assignment studentInfo = new Assignment("John Doe", "Computer Science");
+        Console.WriteLine(studentInfo.GetSummary());
     }
 }
