@@ -2,13 +2,23 @@ using System;
 
 class MathAssignment
 {
-    private string _textBookSection {get; set; }
-    private string _problems {get; set; }
+    private string _textBookSection;
+    private string _problems;
 
-    public MathAssignment GetHomeworkList(string textBookSelection, string problems)
+
+
+    // GETTERS AND SETTERS
+
+    public string GetTextBookSelection()
     {
-        return new MathAssignment {_textBookSection = textBookSelection, _problems = problems};
+        return _textBookSection;
     }
+    public void SetTextBookSelection(string textBookSelection)
+    {
+        _textBookSection = textBookSelection;
+    }
+
+
 }
 
 
