@@ -18,6 +18,15 @@ class MathAssignment
         _textBookSection = textBookSelection;
     }
 
+    public string GetProblems()
+    {
+        return _problems;
+    }
+    public void SetProblems(string problems)
+    {
+        _problems = problems;
+    }
+
 
 }
 
