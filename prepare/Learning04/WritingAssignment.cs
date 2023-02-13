@@ -3,12 +3,19 @@ using System;
 
 class WritingAssignment
 {
-    private string _title { get; set; }
+    private string _title;
 
-    public WritingAssignment GetWritingInformation(string title)
+
+    // GETTERS AND SETTERS
+    public string GetTitle()
     {
-        return new WritingAssignment {_title = title};
+        return _title;
     }
+    public void SetTitle(string title)
+    {
+        _title = title;
+    }
+
 }
 
 
