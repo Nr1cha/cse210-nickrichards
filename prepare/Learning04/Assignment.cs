@@ -3,12 +3,22 @@ using System;
 
 class Assignment // constructor
 {
-    private string _studentName { get; set; }
-    private string _topic { get; set; }
+    private string _studentName;
+    private string _topic;
 
-    public Assignment GetSummary(string studentName, string topic)
-    {
-        return new Assignment { _studentName = studentName, _topic = topic };
-    }
+
+
+// GETTERS AND SETTERS
+public string GetStudentName()
+{
+    return _studentName;
+}
+
+public void SetStudentName(string studentName)
+{
+    _studentName = studentName;
+}
+
 
 }
+
