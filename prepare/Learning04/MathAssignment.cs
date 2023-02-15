@@ -1,30 +1,20 @@
 using System;
 
-class MathAssignment
+class MathAssignment : Assignment
 {
     private string _textBookSection;
     private string _problems;
 
-
-
-    // GETTERS AND SETTERS
-
-    public string GetTextBookSelection()
+    public MathAssignment(string studentName, string topic, string textbookSection, string problems)
+        : base(studentName, topic)
     {
-        return _textBookSection;
-    }
-    public void SetTextBookSelection(string textBookSelection)
-    {
-        _textBookSection = textBookSelection;
-    }
-
-    public string GetProblems()
-    {
-        return _problems;
-    }
-    public void SetProblems(string problems)
-    {
+        _textBookSection = textbookSection;
         _problems = problems;
+    }
+
+    public string GetHomeworkList()
+    {
+        return $"Section {_textBookSection} Problems {_problems}";
     }
 
 
