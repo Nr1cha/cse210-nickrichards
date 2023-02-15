@@ -20,22 +20,16 @@ public string GetStudentName()
 {
     return _studentName;
 }
-public void SetStudentName(string studentName)
-{
-    _studentName = studentName;
-}
 public string GetTopic()
 {
     return _topic;
 }
-public void SetTopic(string topic)
-{
-    _topic = topic;
-}
+
+// METHOD(S)
 
 public string GetSummary()
 {
-    return "Student name: " + _studentName + ", Topic: " + _topic;
+    return  _studentName + "- " + _topic;
 }
 
 }
