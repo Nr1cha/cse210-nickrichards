@@ -1,7 +1,4 @@
-using System;
-
-
-class Assignment // constructor
+public class Assignment
 {
     private string _studentName;
     private string _topic;
@@ -29,7 +26,7 @@ public string GetTopic()
 
 public string GetSummary()
 {
-    return  _studentName + "- " + _topic;
+    return  _studentName + " - " + _topic;
 }
 
 }

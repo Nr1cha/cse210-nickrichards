@@ -1,19 +1,18 @@
-using System;
-
-
-class WritingAssignment
+public class WritingAssignment : Assignment
 {
     private string _title;
 
-
-    // GETTERS AND SETTERS
-    public string GetTitle()
-    {
-        return _title;
-    }
-    public void SetTitle(string title)
+    public WritingAssignment(string studentName, string topic, string title)
+        : base(studentName, topic)
     {
         _title = title;
+    }
+
+    public string GetWritingInformation()
+    {
+        string studentName = GetStudentName();
+
+        return $"{_title} by {studentName}";
     }
 
 }

@@ -1,5 +1,3 @@
-using System;
-
 class MathAssignment : Assignment
 {
     private string _textBookSection;
