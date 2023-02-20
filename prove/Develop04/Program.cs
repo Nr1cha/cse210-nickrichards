@@ -4,10 +4,28 @@ class Program
 {
     static void Main(string[] args)
     {
-        // this portion calls and uses my Activity class
-        Activity testAct = new Activity(); //making a var that invokes the use of class
+
+        Activity testAct = new Activity();
         Console.WriteLine("i'll be back in a few seconds");
-        testAct.Pausing(5000); //sleep for 5 seconds from Activity class
+        testAct.Pausing(5000);
         Console.WriteLine($"I'm back");
+
+
+        // animation portion
+        // string[] spinner = { "/", "-", "\\", "|" };
+        // int i = 0;
+        // DateTime startTime = DateTime.Now;
+        // TimeSpan Duration = new TimeSpan(0, 0, 5);
+        // while (DateTime.Now - startTime < Duration)
+        // {
+
+        //     Console.Write("\r" + spinner[i]);
+        //     testAct.Pausing(200);
+        //     i = (i + 1) % spinner.Length;
+
+        // }
+        
+        Activity animation = new Activity();
+        Console.Write(animation.Animation(500));
     }
 }
