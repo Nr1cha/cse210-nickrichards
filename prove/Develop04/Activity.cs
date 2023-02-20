@@ -14,6 +14,7 @@ public class Activity
         Thread.Sleep(milliseconds);
     }
 
+    // animation method
     public string Animation(int milliseconds)
     {
 
@@ -27,9 +28,8 @@ public class Activity
             Console.Write("\r" + spinner[i]);
             Thread.Sleep(milliseconds);
             i = (i + 1) % spinner.Length;
-            
-        }
 
+        }
         return "";
 
     }
