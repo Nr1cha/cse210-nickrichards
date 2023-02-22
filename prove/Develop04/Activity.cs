@@ -35,7 +35,7 @@ public class Activity
 
     }
 
-    // TODO work on the count-down and count-up timmer next
+    // * work on the count-down and count-up timmer next
     //COUNT-DOWN TIMMER
     public string Timer(int seconds)
     {
@@ -57,6 +57,29 @@ public class Activity
         return "";
     }
 
+
+
+// *DONE text loop is done
+    public string textLoop()
+    {
+        Console.Clear();
+        const int interval = 4000; // interval in milliseconds between "breath in" and "breath out" texts
+        const int duration = 25000; // duration in milliseconds of the breathing exercise
+
+        int elapsed = 0;
+        while (elapsed < duration)
+        {
+            Console.WriteLine("Breath in...\n");
+            Thread.Sleep(interval);
+            Console.WriteLine("Breath out...\n");
+            Thread.Sleep(interval);
+            elapsed += 2 * interval;
+        }
+
+        Console.WriteLine("Exercise complete.");
+        Console.WriteLine("Well Done!");
+        return "";
+    }
 
     // TODO work on the first list type 
 }

@@ -27,6 +27,10 @@ class Program
         int timerTime = int.Parse(_userTimer);
         Console.Write(timer.Timer(timerTime));
 
+        // TEXT LOOP 
+        Activity textLoop = new Activity();
+        Console.Write(textLoop.textLoop());
+
         // main splash screen 
         // Console.Clear();
         // Console.WriteLine("Menu Options:");
@@ -63,29 +67,8 @@ class Program
         //     System.Environment.Exit(0);
 
 
+
         // }
-
-
-        // // breating in and out animation
-        // Console.Clear();
-        // const int interval = 4000; // interval in milliseconds between "breath in" and "breath out" texts
-        // const int duration = 25000; // duration in milliseconds of the breathing exercise
-
-        // int elapsed = 0;
-        // while (elapsed < duration)
-        // {
-        //     Console.WriteLine("Breath in...\n");
-        //     Thread.Sleep(interval);
-        //     Console.WriteLine("Breath out...\n");
-        //     Thread.Sleep(interval);
-        //     elapsed += 2 * interval;
-        // }
-
-        // Console.WriteLine("Exercise complete.");
-        // Console.WriteLine("Well Done!");
-
-
-
-
     }
+
 }
