@@ -21,7 +21,8 @@ public class Activity
         string[] spinner = { "/", "-", "\\", "|" };
         int i = 0;
         DateTime startTime = DateTime.Now;
-        TimeSpan Duration = new TimeSpan(0, 0, milliseconds);
+        // timespan = hrs, min, sec
+        TimeSpan Duration = new TimeSpan(0, 0, 5); //how long the animation will last in seconds
         while (DateTime.Now - startTime < Duration)
         {
 
@@ -33,4 +34,7 @@ public class Activity
         return "";
 
     }
+
+    // TODO work on the count-down and count-up timmer next
+    // TODO work on the first list type 
 }
