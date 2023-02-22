@@ -1,6 +1,9 @@
 public class BreathingActivity
 {
     string _userInputBreath;
+    string _bIn;
+    string _bOut;
+
     public BreathingActivity()
     {
         Console.Clear();
@@ -11,6 +14,8 @@ public class BreathingActivity
         // after user inputs the seconds
         Console.Clear();
         Console.WriteLine("Get ready...");
+
         
+
     }
 }
