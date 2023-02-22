@@ -19,6 +19,14 @@ class Program
         Console.Write(animation.Animation(75)); //how fast the animation will run
         Console.Clear();
 
+        // COUNT DOWN FROM 5 
+        Activity timer = new Activity();
+        string _userTimer;
+        Console.WriteLine("choose how many seconds would you like");
+        _userTimer = Console.ReadLine();
+        int timerTime = int.Parse(_userTimer);
+        Console.Write(timer.Timer(timerTime));
+
         // main splash screen 
         // Console.Clear();
         // Console.WriteLine("Menu Options:");
@@ -58,25 +66,7 @@ class Program
         // }
 
 
-        // COUNT DOWN FROM 5 
-
-        for (int i = 5; i >= 1; i--)
-        {
-            Console.Write(i);
-
-            for (int j = 0; j< 3; j++)
-            {
-                Console.Write(".");
-                System.Threading.Thread.Sleep(250); // Wait for 1/4 of a second
-            }
-            System.Threading.Thread.Sleep(750); // wait for 3/4 of a second
-        }
-        Console.Clear();
-        Console.WriteLine("GO!");
-        Console.ReadLine(); // Wait for user to press a key before exiting
-
-
-        // // breating in and out 
+        // // breating in and out animation
         // Console.Clear();
         // const int interval = 4000; // interval in milliseconds between "breath in" and "breath out" texts
         // const int duration = 25000; // duration in milliseconds of the breathing exercise
