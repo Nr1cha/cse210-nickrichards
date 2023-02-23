@@ -5,5 +5,6 @@ public class ReflectingActivity
     {
         Console.Clear();
         Console.WriteLine("Welcome to the Reflecting Activity");
+        return;
     }
 }

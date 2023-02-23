@@ -7,9 +7,8 @@ public class Activity
 
     }
 
-
     // pause method
-    public void Pausing(int milliseconds)
+    public void Pause(int milliseconds)
     {
         Thread.Sleep(milliseconds);
     }
@@ -35,10 +34,14 @@ public class Activity
 
     }
 
-    // * work on the count-down and count-up timmer next
     //COUNT-DOWN TIMMER
     public string Timer(int seconds)
     {
+        if (seconds < 0) //error handling
+        {
+            throw new ArgumentException("Seconds cannot be negative, please input a positive number.");
+        }
+
         for (int i = seconds; i >= 1; i--)
         {
             Console.Write(i);
@@ -57,9 +60,7 @@ public class Activity
         return "";
     }
 
-
-
-// *DONE text loop is done
+// TEXT LOOP
     public string textLoop()
     {
         Console.Clear();

@@ -10,7 +10,7 @@ class Program
         // delay portion
         Activity testAct = new Activity();
         Console.WriteLine("i'll be back in a few seconds");
-        testAct.Pausing(2000);
+        testAct.Pause(2000);
         Console.WriteLine($"I'm back");
 
 
@@ -32,43 +32,42 @@ class Program
         Console.Write(textLoop.textLoop());
 
         // main splash screen 
-        // Console.Clear();
-        // Console.WriteLine("Menu Options:");
-        // Console.WriteLine("1. Start breathing activity");
-        // Console.WriteLine("2. Start reflecting activity");
-        // Console.WriteLine("3. Start listing activity");
-        // Console.WriteLine("4. Quit");
-        // Console.WriteLine("Please select a choice from the following menu: \n");
-        // _userSelection = Console.ReadLine();
+        Console.Clear();
+        Console.WriteLine("Menu Options:");
+        Console.WriteLine("1. Start breathing activity");
+        Console.WriteLine("2. Start reflecting activity");
+        Console.WriteLine("3. Start listing activity");
+        Console.WriteLine("4. Quit");
+        Console.WriteLine("Please select a choice from the following menu: \n");
+        string _userSelection = Console.ReadLine();
+        int _userMainInput = int.Parse(_userSelection);
 
 
-        // // SELECTION PORTION
-        // if (_userSelection == "1")
-        // {
-        //     BreathingActivity _breathingActivity = new BreathingActivity();
-        //     Console.WriteLine("option 1");
+        // SELECTION PORTION
+        if (_userMainInput == 1)
+        {
+            BreathingActivity _breathingActivity = new BreathingActivity();
+            Console.WriteLine("option 1");
 
-        // }
-        // else if (_userSelection == "2")
-        // {
-        //     ReflectingActivity _reflectingActivity = new ReflectingActivity();
-        //     Console.WriteLine("option 2 ");
+        }
+        else if (_userMainInput == 2)
+        {
+            ReflectingActivity _reflectingActivity = new ReflectingActivity();
+            Console.WriteLine("option 2 ");
 
-        // }
-        // else if (_userSelection == "3")
-        // {
-        //     ListingActivity _listingActivity = new ListingActivity();
-        //     Console.WriteLine("option 3");
+        }
+        else if (_userMainInput == 3)
+        {
+            ListingActivity _listingActivity = new ListingActivity();
+            Console.WriteLine("option 3");
 
-        // }
-        // else if (_userSelection == "4")
-        // {
-        //     Console.WriteLine("Thanks for Participating");
-        //     System.Environment.Exit(0);
+        }
+        else if (_userMainInput == 4)
+        {
+            Console.WriteLine("Thanks for Participating");
+            System.Environment.Exit(0);
 
-
-
-        // }
+        }
     }
 
 }
