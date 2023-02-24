@@ -14,7 +14,7 @@ public class Activity
     }
 
     // animation method
-    public string Animation(int milliseconds)
+    public void Animation(int milliseconds)
     {
 
         string[] spinner = { "/", "-", "\\", "|" };
@@ -30,7 +30,7 @@ public class Activity
             i = (i + 1) % spinner.Length;
 
         }
-        return "";
+        // return "";
 
     }
 

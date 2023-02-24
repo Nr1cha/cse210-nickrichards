@@ -16,7 +16,7 @@ class Program
 
         // animation portion
         Activity animation = new Activity();
-        Console.Write(animation.Animation(75)); //how fast the animation will run
+        animation.Animation(75);
         Console.Clear();
 
         // COUNT DOWN FROM 5 
@@ -44,9 +44,12 @@ class Program
 
 
         // SELECTION PORTION
+
         if (_userMainInput == 1)
         {
-            BreathingActivity _breathingActivity = new BreathingActivity();
+            Console.WriteLine("how long would you like your breathing activity to last in seconds? ");
+            int breathingSeconds = int.Parse(Console.ReadLine());
+            BreathingActivity _breathingActivity = new BreathingActivity(breathingSeconds);
             Console.WriteLine("option 1");
 
         }
