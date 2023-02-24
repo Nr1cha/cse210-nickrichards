@@ -1,9 +1,22 @@
 using System.Threading;
 public class Activity
 {
-    public Activity()
+    private int _duration;
+
+    // getters and setters
+    public int getDuration()
     {
-        // Console.WriteLine("this is a test");
+        return _duration;
+    }
+    public void setDuration(int duration)
+    {
+        _duration = duration;
+    }
+
+    // CONSTRUCTOR
+    public Activity(int duration)
+    {
+        _duration = duration;
 
     }
 
@@ -60,7 +73,7 @@ public class Activity
         return "";
     }
 
-// TEXT LOOP
+    // TEXT LOOP
     public string textLoop()
     {
         Console.Clear();

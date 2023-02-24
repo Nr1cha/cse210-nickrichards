@@ -3,12 +3,11 @@ public class BreathingActivity : Activity
     // string _userInputBreath;
     int _bIn;
     int _bOut;
-    int _duration;
 
     public BreathingActivity(int duration) //CONSTRUCTOR
-        : base()
+        : base(duration)
     {
-        _duration = duration;
+
     }
 
     public void Breath()
@@ -16,7 +15,7 @@ public class BreathingActivity : Activity
         Console.Clear();
         Console.WriteLine("Welcome to the Breathing Activity\n");
         Console.WriteLine("This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.\n");
-        Console.WriteLine($"Your session will last for {_duration} seconds.\n");
+        Console.WriteLine($"Your session will last for {base.getDuration()} seconds.\n");
         Console.WriteLine("Get ready...");
 
         // read user input for breath in and breath out
@@ -28,7 +27,7 @@ public class BreathingActivity : Activity
 
         // NEXT SECTION
 
-        base.textLoop();
+        // base.textLoop();
         Console.WriteLine($"Start breathing exercise with {_bIn} seconds inhale and {_bOut} seconds exhale...");
         // implement breathing activity using _bIn and _bOut variables
         int numCycles = 5; //how ever many cycles i want
