@@ -39,5 +39,4 @@ public class BreathingActivity : Activity
         }
         Console.WriteLine("Breathing exercise complete");
     }
-
 }
