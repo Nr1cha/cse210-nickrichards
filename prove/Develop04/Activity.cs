@@ -82,7 +82,8 @@ public class Activity
         }
         Console.Clear();
         Console.WriteLine("GO!");
-        Console.ReadLine(); // Wait for user to press a key before exiting
+        Thread.Sleep(1500);
+        // Console.ReadLine(); // Wait for user to press a key before exiting
         return "";
     }
 

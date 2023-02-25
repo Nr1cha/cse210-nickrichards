@@ -60,8 +60,10 @@ class Program
             }
             else if (_userMainInput == 2)
             {
-                ReflectingActivity _reflectingActivity = new ReflectingActivity();
-                Console.WriteLine("option 2 ");
+                Console.WriteLine("here?");
+                ReflectingActivity reflectingActivity = new ReflectingActivity();
+                Console.Write("here...");
+                reflectingActivity.Reflect();
             }
             // else if (_userMainInput == 3)
             // {
