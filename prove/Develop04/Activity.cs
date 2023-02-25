@@ -17,14 +17,7 @@ public class Activity
     }
 
     // CONSTRUCTOR
-    public Activity(int duration, string activityName, string activityDescription) //time
-    {
-        _duration = duration;
-        _activityName = activityName;
-        _activityDescription = activityDescription;
-    }
-
-        public Activity(string activityName, string activityDescription) //no-time
+    public Activity(string activityName, string activityDescription) //time
     {
         _activityName = activityName;
         _activityDescription = activityDescription;
@@ -34,6 +27,16 @@ public class Activity
     public void Pause(int milliseconds)
     {
         Thread.Sleep(milliseconds);
+    }
+
+    // welcome method
+    public void WelcomeMessage()
+    {
+        Console.WriteLine($"Welcome to the {_activityName}.\n"); //name
+        Console.WriteLine($"{_activityDescription}.\n"); //description
+        Console.Write($"How long, in seconds would you like for your session? \n"); //duration
+        int duration = int.Parse(Console.ReadLine());
+        _duration = duration;
     }
 
     // animation method

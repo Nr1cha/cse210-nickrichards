@@ -4,43 +4,38 @@ public class BreathingActivity : Activity
     int _bIn;
     int _bOut;
 
-    public BreathingActivity(int duration, string activityName, string activityDescription) //CONSTRUCTOR
-        : base(duration, activityName, activityDescription)
+    public BreathingActivity() //CONSTRUCTOR
+        : base("Breathing Activity", "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing")
     {
-
+        
     }
 
     public void Breath()
     {
         Console.Clear();
-        Console.WriteLine("Welcome to the Breathing Activity\n");
-        Console.WriteLine("This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.\n");
+        base.WelcomeMessage();
+
         Console.WriteLine($"Your session will last for {base.getDuration()} seconds.\n");
         Console.WriteLine("Get ready...");
 
         // read user input for breath in and breath out
-        Console.WriteLine("How many seconds would you like for your inhale?");
+        Console.Write("How many seconds would you like for your inhale? \n");
         _bIn = int.Parse(Console.ReadLine());
-        Console.WriteLine("How many seconds would you like for your exhale?");
+        Console.Write("How many seconds would you like for your exhale? \n");
         _bOut = int.Parse(Console.ReadLine());
 
+        Console.WriteLine($"Start breathing exercise with {_bIn} seconds inhale and {_bOut} seconds exhale...\n");
 
-        // NEXT SECTION
-
-        // base.textLoop();
-        Console.WriteLine($"Start breathing exercise with {_bIn} seconds inhale and {_bOut} seconds exhale...");
-        // implement breathing activity using _bIn and _bOut variables
-        int numCycles = 5; //how ever many cycles i want
-        for (int i = 1; i <= numCycles; i++)
+        double loopTime = Math.Floor(Convert.ToDouble(base.getDuration() / (_bIn + _bOut)));
+        for (double i = 1; i <= loopTime; i++)
         {
-            Console.WriteLine($"Cycle {i}: Start breathin in...");
+
+            Console.WriteLine($"Cycle {i}: Start breathin in...\n");
             Thread.Sleep(TimeSpan.FromSeconds(_bIn));
-            Console.WriteLine("Hold your breath...");
-            Thread.Sleep(TimeSpan.FromSeconds(2));
-            Console.WriteLine("Start breathing out...");
+
+            Console.WriteLine("Start breathing out...\n");
             Thread.Sleep(TimeSpan.FromSeconds(_bOut));
-            Console.WriteLine("End of exhale, hold for a few seconds...");
-            Thread.Sleep(TimeSpan.FromSeconds(2));
+ 
         }
         Console.WriteLine("Breathing exercise complete");
     }
