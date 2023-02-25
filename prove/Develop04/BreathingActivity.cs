@@ -7,7 +7,7 @@ public class BreathingActivity : Activity
     public BreathingActivity() //CONSTRUCTOR
         : base("Breathing Activity", "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing")
     {
-        
+
     }
 
     public void Breath()
@@ -35,7 +35,7 @@ public class BreathingActivity : Activity
 
             Console.WriteLine("Start breathing out...\n");
             Thread.Sleep(TimeSpan.FromSeconds(_bOut));
- 
+
         }
         Console.WriteLine("Breathing exercise complete");
     }
