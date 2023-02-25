@@ -4,8 +4,8 @@ public class BreathingActivity : Activity
     int _bIn;
     int _bOut;
 
-    public BreathingActivity(int duration) //CONSTRUCTOR
-        : base(duration)
+    public BreathingActivity(int duration, string activityName, string activityDescription) //CONSTRUCTOR
+        : base(duration, activityName, activityDescription)
     {
 
     }

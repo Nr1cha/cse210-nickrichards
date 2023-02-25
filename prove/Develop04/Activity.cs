@@ -2,6 +2,9 @@ using System.Threading;
 public class Activity
 {
     private int _duration;
+    private string _activityName; 
+    private string _activityDescription; 
+
 
     // getters and setters
     public int getDuration()
@@ -14,10 +17,17 @@ public class Activity
     }
 
     // CONSTRUCTOR
-    public Activity(int duration)
+    public Activity(int duration, string activityName, string activityDescription) //time
     {
         _duration = duration;
+        _activityName = activityName;
+        _activityDescription = activityDescription;
+    }
 
+        public Activity(string activityName, string activityDescription) //no-time
+    {
+        _activityName = activityName;
+        _activityDescription = activityDescription;
     }
 
     // pause method

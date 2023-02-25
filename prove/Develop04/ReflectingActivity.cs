@@ -1,13 +1,12 @@
-public class ReflectingActivity
+public class ReflectingActivity : Activity
 {
     string _userInputReflecting;
-    public ReflectingActivity()
+    public ReflectingActivity(string activityName, string activityDescription)
+        : base(activityName, activityDescription)
     {
         Console.Clear();
         Console.WriteLine("Welcome to the Reflecting Activity");
         return;
     }
 
-
-    
 }
