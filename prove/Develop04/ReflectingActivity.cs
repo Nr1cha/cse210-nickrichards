@@ -32,50 +32,43 @@ public class ReflectingActivity : Activity
     {
         Console.Clear();
         base.WelcomeMessage();
+        Console.Clear();
         Console.WriteLine("Get ready...\n");
-        Thread.Sleep(5000);
+        base.Animation(5);
+        Console.Clear();
         Console.WriteLine("Consider the following prompt: \n");
+        Thread.Sleep(500);
 
         // todo RANDOM QUESTION
         Random random = new Random();
         int startingMessageIndex = random.Next(0, _startingMessage.Count);
         string startingMessage = _startingMessage[startingMessageIndex];
-        Console.WriteLine($"----- {startingMessage} -----");
-        Thread.Sleep(7000);
+        Console.WriteLine($"----- {startingMessage} -----\n");
+        Thread.Sleep(5000);
 
         // this part will be the question for thought 
         Console.WriteLine("When you have something in mind, press enter to continue.\n");
         Console.ReadLine();
 
-        // string userInput = Console.ReadLine();
-        // todo Then check to see if they pressed enter
+        Console.Clear();
         Thread.Sleep(500);
-        Console.WriteLine("Now ponder on each of the following questions as they related to this experience.");
+        Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
         Thread.Sleep(500);
 
         Console.WriteLine("You may begin in:");
         base.Timer(5); //COUNT-DOWN TIMMER 
         Console.Clear();
-        // todo RANDOM SUB-QUESTION
-        int relatedQuestionIndex = random.Next(0, _relatedQuestion.Count);
-        string relatedQuestion = _relatedQuestion[relatedQuestionIndex];
-        Console.WriteLine($"\n{relatedQuestion}"); // SPINNING ANIMATION
-        base.Animation(75);
 
-        // wait for some time
 
-        // todo RANDOM SUB-SUB-QUESTION
-        int relatedQuestionIndex2 = random.Next(0, _relatedQuestion.Count);
-        string relatedQuestion2 = _relatedQuestion[relatedQuestionIndex2];
-        Console.WriteLine($"\n{relatedQuestion2}"); // SPINNING ANIMATION
-        base.Animation(75);
-
-        // wait for some time
-
-        Console.WriteLine("\nWell done!!");
-        // spin animation
-        // end of activity
-        Thread.Sleep(2000);
+        double loopTime = Math.Floor(Convert.ToDouble(base.getDuration() / (5)));
+        for (double i = 1; i <= loopTime; i++)
+        {
+            int relatedQuestionIndex = random.Next(0, _relatedQuestion.Count);
+            string relatedQuestion = _relatedQuestion[relatedQuestionIndex];
+            Console.WriteLine($"\n{relatedQuestion}");
+            base.Animation(5);
+        }
+        base.endingMessage();
     }
 
 }

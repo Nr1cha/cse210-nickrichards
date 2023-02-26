@@ -2,8 +2,8 @@ using System.Threading;
 public class Activity
 {
     private int _duration;
-    private string _activityName; 
-    private string _activityDescription; 
+    private string _activityName;
+    private string _activityDescription;
 
 
     // getters and setters
@@ -23,12 +23,6 @@ public class Activity
         _activityDescription = activityDescription;
     }
 
-    // pause method
-    public void Pause(int milliseconds)
-    {
-        Thread.Sleep(milliseconds);
-    }
-
     // welcome method
     public void WelcomeMessage()
     {
@@ -40,24 +34,23 @@ public class Activity
     }
 
     // animation method
-    public void Animation(int milliseconds)
+    public void Animation(int seconds)
     {
 
         string[] spinner = { "/", "-", "\\", "|" };
         int i = 0;
         DateTime startTime = DateTime.Now;
         // timespan = hrs, min, sec
-        TimeSpan Duration = new TimeSpan(0, 0, 5); //how long the animation will last in seconds
+        TimeSpan Duration = new TimeSpan(0, 0, seconds); //how long the animation will last in seconds
         while (DateTime.Now - startTime < Duration)
         {
 
             Console.Write("\r" + spinner[i]);
-            Thread.Sleep(milliseconds);
+            Thread.Sleep(75);
             i = (i + 1) % spinner.Length;
 
         }
-        // return "";
-
+        Console.WriteLine("");
     }
 
     //COUNT-DOWN TIMMER
@@ -109,5 +102,10 @@ public class Activity
         return "";
     }
 
-    // TODO work on the first list type 
+    public void endingMessage()
+    {
+        Console.WriteLine($"{_activityName} complete.");
+        Console.WriteLine("Well done!!!");
+        Animation(5);
+    }
 }

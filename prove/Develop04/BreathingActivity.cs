@@ -1,8 +1,8 @@
 public class BreathingActivity : Activity
 {
     // string _userInputBreath;
-    int _bIn;
-    int _bOut;
+    private int _bIn;
+    private int _bOut;
 
     public BreathingActivity() //CONSTRUCTOR
         : base("Breathing Activity", "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing")
@@ -14,9 +14,11 @@ public class BreathingActivity : Activity
     {
         Console.Clear();
         base.WelcomeMessage();
-
+        Console.Clear();
         Console.WriteLine($"Your session will last for {base.getDuration()} seconds.\n");
         Console.WriteLine("Get ready...");
+        base.Animation(5);
+
 
         // read user input for breath in and breath out
         Console.Write("How many seconds would you like for your inhale? \n");
@@ -37,6 +39,7 @@ public class BreathingActivity : Activity
             Thread.Sleep(TimeSpan.FromSeconds(_bOut));
 
         }
-        Console.WriteLine("Breathing exercise complete");
+
+        base.endingMessage();
     }
 }
