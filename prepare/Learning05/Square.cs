@@ -4,7 +4,7 @@ public class Square : Shape
 
 
     public Square(string color, double side)
-        : base (color)
+        : base(color)
     {
         _side = side;
     }
