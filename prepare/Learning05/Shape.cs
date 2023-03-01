@@ -1,8 +1,7 @@
-using System;
-public class Shape
+public abstract class Shape
 {
 
-    string _color;
+    private string _color;
 
     public Shape(string color)
     {
@@ -19,9 +18,5 @@ public class Shape
         _color = color;
     }
 
-    public virtual double GetArea()
-    {
-        return 0;
-    }
-
+    public abstract double GetArea();
 }
