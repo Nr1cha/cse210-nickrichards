@@ -1,23 +1,17 @@
-using System;
-
-public class Rectangle
+public class Rectangle : Shape
 {
-
-
     double _length;
     double _width;
 
-    public double GetArea()
+    public Rectangle(string color, double length, double width)
+        : base (color)
+        {
+            _length = length;
+            _width = width;
+        }
+    public override double GetArea()
     {
-        return 0;
+        return _length * _width;
     }
-
-
-
-
-
-
-
-
 
 }
