@@ -1,7 +1,7 @@
 public class Rectangle : Shape
 {
-    double _length;
-    double _width;
+    private double _length;
+    private double _width;
 
     public Rectangle(string color, double length, double width)
         : base(color)
