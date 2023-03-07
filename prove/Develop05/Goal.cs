@@ -1,4 +1,4 @@
-public class Goal
+abstract class Goal
 {
     private string _name;
     private string _description;
@@ -11,4 +11,22 @@ public class Goal
         _description = description;
         _goalPoints = points;
     }
+
+    abstract void SaveGoal();
+
+    public int calculatePoints()
+    {
+
+    }
+
+    public void DisplayGoal()
+    {
+
+    }
+
+    public void RecordEvent()
+    {
+        
+    }
+
 }
