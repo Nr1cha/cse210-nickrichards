@@ -1,4 +1,4 @@
-abstract class Goal
+public class Goal
 {
     private string _name;
     private string _description;
@@ -12,12 +12,12 @@ abstract class Goal
         _goalPoints = points;
     }
 
-    abstract void SaveGoal();
+    // abstract void SaveGoal();
 
-    public int calculatePoints()
-    {
+    // public int calculatePoints()
+    // {
 
-    }
+    // }
 
     public void DisplayGoal()
     {

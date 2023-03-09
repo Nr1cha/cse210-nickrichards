@@ -5,15 +5,15 @@ public class CheckListGoal
     private int _numOfTimesCompleted;
     private int _bonus;
 
-    public void RecordEvent();
-    public bool IsComplete()
-    {
+    // public void RecordEvent();
+    // public bool IsComplete()
+    // {
 
-    }
+    // }
 
-    public override int CalculatePoints()
-    {
+    // public override int CalculatePoints()
+    // {
 
-    }
+    // }
 
 }
