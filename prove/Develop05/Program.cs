@@ -69,7 +69,6 @@ class Program
                     int bonusNum = int.Parse(Console.ReadLine());
                     Console.Write("What is the bonus for accomplishing it that many times? ");
                     int bonusScore = int.Parse(Console.ReadLine());
-
                 }
                 // Goal newGoal = new Goal(string goalName, string goalDescription, int totalPoints);
                 // bigGoalList.AddGoalsToList(newGoal);
@@ -80,16 +79,22 @@ class Program
             {
                 Console.Clear();
                 Console.WriteLine("you selected 2 as your option");
+                Thread.Sleep(1500);
+
             }
             else if (userInput == 3)
             {
                 Console.Clear();
                 Console.WriteLine("you selected 3 as your option");
+                Thread.Sleep(1500);
+
             }
             else if (userInput == 4)
             {
                 Console.Clear();
                 Console.WriteLine("you selected 4 as your option");
+                Thread.Sleep(1500);
+
             }
             else if (userInput == 5)
             {
@@ -97,12 +102,8 @@ class Program
                 Console.WriteLine("you selected 5 as your option");
                 Thread.Sleep(1500);
             }
-
         }
         while (userInput != 6);
         return;
-
-
-
     }
 }
