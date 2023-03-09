@@ -16,7 +16,7 @@ public class ManageGoals
         {
             foreach (Goal goalItem in _goalList)
             {
-                outputFile.WriteLine(goalItem.DisplayGoal());
+                // outputFile.WriteLine(goalItem.DisplayGoal());
             }
         }
 
@@ -42,7 +42,7 @@ public class ManageGoals
         List<string> goalEntry = new List<string>();
         foreach (Goal goalItem in _goalList)
         {
-            goalEntry.Add(goalItem.DisplayGoal());
+            // goalEntry.Add(goalItem.DisplayGoal());
         }
         string line = string.Join('\n', goalEntry);
         return line;
