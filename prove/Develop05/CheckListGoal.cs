@@ -1,9 +1,15 @@
 public class CheckListGoal : Goal
 {
-    private bool isComplete;
+    private bool _isComplete;
     private int _numOfTimesRequired;
     private int _numOfTimesCompleted;
     private int _bonus;
+
+    public CheckListGoal(string name, string description, int points)
+        : base(name, description, points)
+        {
+
+        }
 
     public override void RecordEvent()
     {
@@ -11,7 +17,7 @@ public class CheckListGoal : Goal
     }
     public bool IsComplete()
     {
-
+        return _isComplete;
     }
 
     public override int CalculatePoints()
