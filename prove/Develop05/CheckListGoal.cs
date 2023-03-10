@@ -5,7 +5,10 @@ public class CheckListGoal : Goal
     private int _numOfTimesCompleted;
     private int _bonus;
 
-    public void RecordEvent();
+    public override void RecordEvent()
+    {
+        Console.WriteLine("test3");
+    }
     public bool IsComplete()
     {
 
@@ -13,7 +16,7 @@ public class CheckListGoal : Goal
 
     public override int CalculatePoints()
     {
-
+        return 5;
     }
 
 }
