@@ -12,9 +12,12 @@ public abstract class Goal
         _goalPoints = points;
     }
 
-    public abstract void SaveGoal();
+    public virtual void SaveGoal()
+    {
+        
+    }
 
-    public virtual int calculatePoints()
+    public virtual int CalculatePoints()
     {
         return _goalPoints;
     }

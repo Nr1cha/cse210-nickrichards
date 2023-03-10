@@ -5,13 +5,13 @@ public class ManageGoals
     private int _points;
     private string _filePath;
 
-    public ManageGoals(string filePath)
+    public ManageGoals()
     {
-        _filePath = filePath;
     }
 
-    public void SaveAllGoals()
+    public void SaveAllGoals(string filePath)
     {
+        _filePath = filePath;
         using(StreamWriter outputFile = new StreamWriter(_filePath))
         {
             foreach (Goal goalItem in _goalList)

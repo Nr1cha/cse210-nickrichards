@@ -10,7 +10,7 @@ class Program
         int userInput2;
         // string userFile;
         List<Goal> _goalList = new List<Goal>();
-        // ManageGoals bigGoalList = new ManageGoals(userFile);
+        ManageGoals bigGoalList = new ManageGoals();
 
         do
         {
@@ -69,11 +69,12 @@ class Program
                     int bonusNum = int.Parse(Console.ReadLine());
                     Console.Write("What is the bonus for accomplishing it that many times? ");
                     int bonusScore = int.Parse(Console.ReadLine());
+
+                    Goal newGoal = new CheckListGoal(goalName, goalDescription, totalPoints);
+                    bigGoalList.AddGoalsToList(newGoal);
+                    Console.WriteLine("Goal added successfully");
+                    Console.ReadKey();
                 }
-                // Goal newGoal = new Goal(string goalName, string goalDescription, int totalPoints);
-                // bigGoalList.AddGoalsToList(newGoal);
-                // Console.WriteLine("Goal added successfully");
-                // Console.ReadKey();
             }
             else if (userInput == 2)
             {

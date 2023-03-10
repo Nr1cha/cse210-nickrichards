@@ -1,13 +1,11 @@
 public class SimpleGoal : Goal
 {
-    private bool _isComplete;
-    private int _progress;
+    private bool _isComplete = false;
+    private int _progress = 0;
 
     public SimpleGoal(string name, string description, int points)
         : base(name, description, points)
     {
-        _isComplete = false;
-        _progress = 0;
     }
 
     public override void RecordEvent()

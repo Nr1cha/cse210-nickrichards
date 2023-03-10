@@ -7,9 +7,9 @@ public class CheckListGoal : Goal
 
     public CheckListGoal(string name, string description, int points)
         : base(name, description, points)
-        {
+    {
 
-        }
+    }
 
     public override void RecordEvent()
     {
