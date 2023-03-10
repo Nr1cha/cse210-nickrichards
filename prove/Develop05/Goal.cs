@@ -1,4 +1,4 @@
-public class Goal
+public abstract class Goal
 {
     private string _name;
     private string _description;
@@ -12,21 +12,23 @@ public class Goal
         _goalPoints = points;
     }
 
-    // abstract void SaveGoal();
+    public abstract void SaveGoal();
 
-    // public int calculatePoints()
-    // {
-
-    // }
+    public int calculatePoints()
+    {
+        return _goalPoints;
+    }
 
     public void DisplayGoal()
     {
-
+        Console.WriteLine($"Name: {_name}");
+        Console.WriteLine($"Name: {_description}");
+        Console.WriteLine($"Name: {_goalPoints}");
     }
 
     public void RecordEvent()
     {
-        
+
     }
 
 }
