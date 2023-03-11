@@ -12,6 +12,11 @@ public abstract class Goal
         _goalPoints = points;
     }
 
+    public Goal()
+    {
+
+    }
+
     public virtual void SaveGoal()
     {
         
@@ -22,7 +27,7 @@ public abstract class Goal
         return _goalPoints;
     }
 
-    public string DisplayGoal()
+    public virtual string DisplayGoal()
     {
         string goalName = ($"Name: {_name}");
         string goalDescription = ($"Description: {_description}");
@@ -34,6 +39,15 @@ public abstract class Goal
     public virtual void RecordEvent()
     {
         Console.WriteLine("test");
+    }
+
+    public string GetName()
+    {
+        return _name;
+    }
+    public void SetName(string name)
+    {
+        _name = name;
     }
 
 }

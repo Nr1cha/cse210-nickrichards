@@ -18,24 +18,69 @@ public class ManageGoals
         }
 
     }
-    public List<Goal> LoadGoals(string filename)
+    public void LoadGoals(string filename)
     {
         using (StreamReader textFile = new StreamReader(filename))
         {
             string line;
             List<Goal> _fileEntries = new List<Goal>();
-            Goal newGoal;
+            // Goal newGoal;
+            List<string> goalLines = new List<string>();
             while ((line = textFile.ReadLine()) != null)
             {
                 Console.WriteLine(line);
-                if (line.StartsWith("Name:"))
+                goalLines.Add(line);
+                if (line == "")
                 {
-                    // newGoal = new SimpleGoal();
-                }
+                    string goalType = "";
+                    string goalName = "";
+                    string goalDescription = "";
+                    int goalPoints = 0;
+                    int goalBonus = 0;
+                    int numOfTimesCompleted = 0;
+                    bool completed = false;
+                    int numOfTimesRequired = 0;
+                    foreach (string goalLine in goalLines)
+                    {
 
+                        if (goalLine.StartsWith("Goal Type:"))
+                        {
+                            goalType = goalLine.Replace("Goal Type: ", "").Trim();
+                        }
+                        else if (goalLine.StartsWith("Name: "))
+                        {
+                            goalName = goalLine.Replace("Name: ", "").Trim();
+                        }
+                        else if (goalLine.StartsWith("Description: "))
+                        {
+                            goalDescription = goalLine.Replace("Description: ", "").Trim();
+                        }
+                        else if (goalLine.StartsWith("Goal Points: "))
+                        {
+                            goalPoints = int.Parse(goalLine.Replace("Goal Points: ", "").Trim());
+                        }
+
+                    }
+                    if (goalType == "SimpleGoal")
+                    {
+                        SimpleGoal newSimpleGoal = new SimpleGoal(goalName, goalDescription, goalPoints);
+                        _fileEntries.Add(newSimpleGoal);
+                    }
+                    else if (goalType == "EternalGoal")
+                    {
+                        EternalGoal newEternalGoal = new EternalGoal(goalName, goalDescription, goalPoints);
+                        _fileEntries.Add(newEternalGoal);
+                    }
+                    else if (goalType == "CheckListGoal")
+                    {
+                        CheckListGoal newCheckListGoal = new CheckListGoal(goalName, goalDescription, goalPoints, numOfTimesRequired, numOfTimesCompleted, goalBonus, completed);
+                    }
+                    goalLines.Clear(); // empty list
+                }
             }
+
+
             _goalList = _fileEntries;
-            return _fileEntries;
         }
     }
 

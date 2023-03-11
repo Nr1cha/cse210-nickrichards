@@ -92,8 +92,10 @@ class Program
             else if (userInput == 4)
             {
                 Console.Clear();
-                Console.WriteLine("you selected 4 as your option");
-                Thread.Sleep(1500);
+                Console.WriteLine("Please provide the name of the filename");
+                string userLoadFile = Console.ReadLine();
+                bigGoalList.LoadGoals(userLoadFile);
+                Console.ReadKey();
 
             }
             else if (userInput == 5)
