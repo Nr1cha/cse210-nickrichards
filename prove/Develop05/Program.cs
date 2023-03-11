@@ -22,7 +22,7 @@ class Program
             Console.WriteLine("Menu Options:");
             Console.WriteLine("     1. Create New Goal");
             Console.WriteLine("     2. List Goals");
-            Console.WriteLine("     3. Save Goals"); // todo to file 1st
+            Console.WriteLine("     3. Save Goals"); // * to file 1st
             Console.WriteLine("     4. Load Goals");//todo from file 3rd
             Console.WriteLine("     5. Record Event"); //todo 2nd for a simple goal, mark it as complete. for eternal goal, add 1 to number of times completed, for checklist goal, add one to number of times completed and see if the checklist is complete
             Console.WriteLine("     6. Quit");

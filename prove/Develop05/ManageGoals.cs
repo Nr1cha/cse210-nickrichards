@@ -18,9 +18,25 @@ public class ManageGoals
         }
 
     }
-    public void LoadGoals()
+    public List<Goal> LoadGoals(string filename)
     {
+        using (StreamReader textFile = new StreamReader(filename))
+        {
+            string line;
+            List<Goal> _fileEntries = new List<Goal>();
+            Goal newGoal;
+            while ((line = textFile.ReadLine()) != null)
+            {
+                Console.WriteLine(line);
+                if (line.StartsWith("Name:"))
+                {
+                    // newGoal = new SimpleGoal();
+                }
 
+            }
+            _goalList = _fileEntries;
+            return _fileEntries;
+        }
     }
 
     public void AddGoalsToList(Goal goal)
@@ -40,7 +56,8 @@ public class ManageGoals
         string goalResult = "";
         foreach (Goal goalItem in _goalList)
         {
-            goalResult += "\n\n" + goalItem.DisplayGoal();
+            goalResult += ($"Goal Type: {goalItem.GetType()} \n");
+            goalResult += goalItem.DisplayGoal() + "\n\n";
         }
         return goalResult;
     }
