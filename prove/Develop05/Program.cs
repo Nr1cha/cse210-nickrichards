@@ -84,6 +84,8 @@ class Program
             {
                 Console.Clear();
                 Console.WriteLine("Enter a file name to save the goals: ");
+                string userFile = Console.ReadLine();
+                bigGoalList.SaveAllGoals(userFile);
                 Thread.Sleep(1500);
 
             }
