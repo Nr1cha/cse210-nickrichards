@@ -2,7 +2,6 @@ public class ManageGoals
 {
     private List<Goal> _goalList = new List<Goal>(); //todo here is my goal list
 
-    private int _points;
     private string _filePath;
 
     public ManageGoals()
@@ -154,8 +153,8 @@ public class ManageGoals
             {
                 completedBox = "[X]";
             }
-            
-            goalNames += ($"{goalIndex}. {completedBox} {goal.GetName()} ({goal.GetDescription()}) \n\n");
+            string progress = goal.DisplayProgress();
+            goalNames += ($"{goalIndex}. {completedBox} {goal.GetName()} ({goal.GetDescription()}) {progress} \n\n");
         }
         return goalNames;
     }

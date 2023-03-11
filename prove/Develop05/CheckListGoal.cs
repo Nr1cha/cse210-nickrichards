@@ -1,7 +1,7 @@
 public class CheckListGoal : Goal
 {
     private bool _isComplete = false;
-    private int _numOfTimesRequired;
+    private int _numOfTimesRequired = 0;
     private int _numOfTimesCompleted = 0;
     private int _bonus;
 
@@ -67,6 +67,11 @@ Completed: {_isComplete}");
     public override void SetCompletedStatus(bool complete)
     {
         _isComplete = complete;
+    }
+
+    public override string DisplayProgress()
+    {
+        return ($"-- Currently Completed: {_numOfTimesCompleted} / {_numOfTimesRequired}");
     }
 
 

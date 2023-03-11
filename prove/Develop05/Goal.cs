@@ -81,4 +81,9 @@ public abstract class Goal
 
     }
 
+    public virtual string DisplayProgress()
+    {
+        return "";
+    }
+
 }
