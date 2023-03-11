@@ -22,11 +22,13 @@ public abstract class Goal
         return _goalPoints;
     }
 
-    public void DisplayGoal()
+    public string DisplayGoal()
     {
-        Console.WriteLine($"Name: {_name}");
-        Console.WriteLine($"Description: {_description}");
-        Console.WriteLine($"Goal Points: {_goalPoints}");
+        string goalName = ($"Name: {_name}");
+        string goalDescription = ($"Description: {_description}");
+        string goalPoints = ($"Goal Points: {_goalPoints}");
+        string result = ($"{goalName} \n{goalDescription} \n{goalPoints}");
+        return result;
     }
 
     public virtual void RecordEvent()

@@ -1,6 +1,6 @@
 public class ManageGoals
 {
-    List<Goal> _goalList = new List<Goal>();
+    private List<Goal> _goalList = new List<Goal>(); //todo here is my goal list
 
     private int _points;
     private string _filePath;
@@ -12,12 +12,9 @@ public class ManageGoals
     public void SaveAllGoals(string filePath)
     {
         _filePath = filePath;
-        using(StreamWriter outputFile = new StreamWriter(_filePath))
+        using (StreamWriter outputFile = new StreamWriter(_filePath))
         {
-            foreach (Goal goalItem in _goalList)
-            {
-                // outputFile.WriteLine(goalItem.DisplayGoal());
-            }
+            outputFile.WriteLine(DisplayGoals());
         }
 
     }
@@ -31,20 +28,20 @@ public class ManageGoals
         _goalList.Add(goal);
     }
 
+
     public int DisplayPoints(int points) //show the points to the screen
     {
         _points = points;
         return _points;
     }
 
-    public string DisplayGoals() //show the goals to the screen
+    public string DisplayGoals() //show the goals to the screen //*done
     {
-        List<string> goalEntry = new List<string>();
+        string goalResult = "";
         foreach (Goal goalItem in _goalList)
         {
-            // goalEntry.Add(goalItem.DisplayGoal());
+            goalResult += "\n\n" + goalItem.DisplayGoal();
         }
-        string line = string.Join('\n', goalEntry);
-        return line;
+        return goalResult;
     }
 }

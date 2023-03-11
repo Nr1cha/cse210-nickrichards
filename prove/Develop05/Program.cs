@@ -1,7 +1,10 @@
 using System;
+using System.Collections.Generic;
+using System.Threading;
 
 class Program
 {
+    
     static void Main(string[] args)
     {
 
@@ -9,7 +12,6 @@ class Program
         int userInput;
         int userInput2;
         // string userFile;
-        List<Goal> _goalList = new List<Goal>();
         ManageGoals bigGoalList = new ManageGoals();
 
         do
@@ -20,9 +22,9 @@ class Program
             Console.WriteLine("Menu Options:");
             Console.WriteLine("     1. Create New Goal");
             Console.WriteLine("     2. List Goals");
-            Console.WriteLine("     3. Save Goals");
-            Console.WriteLine("     4. Load Goals");
-            Console.WriteLine("     5. Record Event");
+            Console.WriteLine("     3. Save Goals"); // todo to file 1st
+            Console.WriteLine("     4. Load Goals");//todo from file 3rd
+            Console.WriteLine("     5. Record Event"); //todo 2nd for a simple goal, mark it as complete. for eternal goal, add 1 to number of times completed, for checklist goal, add one to number of times completed and see if the checklist is complete
             Console.WriteLine("     6. Quit");
             Console.Write("Select a choice from the menu: ");
             userInput = int.Parse(Console.ReadLine());
@@ -36,57 +38,52 @@ class Program
                 Console.WriteLine("Which type of goal would you like to create?");
                 userInput2 = int.Parse(Console.ReadLine());
 
+                // Common Questions
+                Console.WriteLine("");
+                Console.WriteLine("What is the name of the goal? ");
+                string goalName = Console.ReadLine(); //todo add the goalName to a list of goalNames
+                Console.WriteLine("Enter goal description:");
+                string goalDescription = Console.ReadLine(); // todo add the goalDescription to a list of goalDescriptions
+                Console.WriteLine("What is the amount of points associated with this goal? ");
+                int totalPoints = int.Parse(Console.ReadLine()); // todo add totalPoints to a list of totalPoints
+
                 if (userInput2 == 1)
                 {
-                    Console.WriteLine("");
-                    Console.WriteLine("What is the name of the goal? ");
-                    string goalName = Console.ReadLine();
-                    Console.WriteLine("Enter goal description:");
-                    string goalDescription = Console.ReadLine();
-                    Console.WriteLine("What is the amount of points associated with this goal? ");
-                    int totalPoints = int.Parse(Console.ReadLine());
+                    Goal newGoal = new SimpleGoal(goalName, goalDescription, totalPoints);
+                    bigGoalList.AddGoalsToList(newGoal);
+
                 }
                 else if (userInput2 == 2)
                 {
-                    Console.WriteLine("");
-                    Console.WriteLine("What is the name of the goal? ");
-                    string goalName = Console.ReadLine();
-                    Console.WriteLine("Enter goal description:");
-                    string goalDescription = Console.ReadLine();
-                    Console.WriteLine("What is the amount of points associated with this goal? ");
-                    int totalPoints = int.Parse(Console.ReadLine());
+                    Goal newGoal = new EternalGoal(goalName, goalDescription, totalPoints);
+                    bigGoalList.AddGoalsToList(newGoal);
                 }
                 else if (userInput2 == 3)
                 {
-                    Console.WriteLine("");
-                    Console.WriteLine("What is the name of the goal? ");
-                    string goalName = Console.ReadLine();
-                    Console.WriteLine("Enter goal description:");
-                    string goalDescription = Console.ReadLine();
-                    Console.WriteLine("What is the amount of points associated with this goal? ");
-                    int totalPoints = int.Parse(Console.ReadLine());
+
                     Console.Write("How many times does this goal need to be accomplished for a bonus? ");
                     int bonusNum = int.Parse(Console.ReadLine());
-                    Console.Write("What is the bonus for accomplishing it that many times? ");
+                    Console.Write($"What is the bonus for accomplishing it {bonusNum} times? ");
                     int bonusScore = int.Parse(Console.ReadLine());
-
-                    Goal newGoal = new CheckListGoal(goalName, goalDescription, totalPoints);
+                    Goal newGoal = new CheckListGoal(goalName, goalDescription, totalPoints, bonusNum, bonusScore);
                     bigGoalList.AddGoalsToList(newGoal);
                     Console.WriteLine("Goal added successfully");
                     Console.ReadKey();
                 }
+                
             }
-            else if (userInput == 2)
+            else if (userInput == 2) //* work on listing new goals
             {
                 Console.Clear();
-                Console.WriteLine("you selected 2 as your option");
-                Thread.Sleep(1500);
+                Console.WriteLine("Goals:");
+                Console.WriteLine(bigGoalList.DisplayGoals());
+                Console.ReadKey();
 
             }
             else if (userInput == 3)
             {
                 Console.Clear();
-                Console.WriteLine("you selected 3 as your option");
+                Console.WriteLine("Enter a file name to save the goals: ");
                 Thread.Sleep(1500);
 
             }
@@ -103,8 +100,8 @@ class Program
                 Console.WriteLine("you selected 5 as your option");
                 Thread.Sleep(1500);
             }
+
         }
         while (userInput != 6);
-        return;
     }
 }
