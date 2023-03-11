@@ -7,18 +7,16 @@ class Program
     
     static void Main(string[] args)
     {
-
-        // int totalPoints;
         int userInput;
         int userInput2;
-        // string userFile;
         ManageGoals bigGoalList = new ManageGoals();
 
         do
         {
             Console.Clear();
-            // Console.WriteLine($"You have {bigGoalList.DisplayPoints(0)} points.");
+            Console.WriteLine($"You have {bigGoalList.DisplayPoints()} points.");
             Console.WriteLine("");
+            Console.WriteLine($"{bigGoalList.showCompletedGoals()}");
             Console.WriteLine("Menu Options:");
             Console.WriteLine("     1. Create New Goal");
             Console.WriteLine("     2. List Goals");
@@ -31,6 +29,7 @@ class Program
 
             if (userInput == 1)
             {
+                // common questions
                 Console.WriteLine("The types of Goals are: ");
                 Console.WriteLine("  1. Simple Goal");
                 Console.WriteLine("  2. Eternal Goal");
@@ -38,12 +37,12 @@ class Program
                 Console.WriteLine("Which type of goal would you like to create?");
                 userInput2 = int.Parse(Console.ReadLine());
 
-                // Common Questions
+                // sub-questions
                 Console.WriteLine("");
                 Console.WriteLine("What is the name of the goal? ");
-                string goalName = Console.ReadLine(); //todo add the goalName to a list of goalNames
+                string goalName = Console.ReadLine(); 
                 Console.WriteLine("Enter goal description:");
-                string goalDescription = Console.ReadLine(); // todo add the goalDescription to a list of goalDescriptions
+                string goalDescription = Console.ReadLine(); 
                 Console.WriteLine("What is the amount of points associated with this goal? ");
                 int totalPoints = int.Parse(Console.ReadLine()); // todo add totalPoints to a list of totalPoints
 
@@ -106,7 +105,10 @@ class Program
                 Console.Write("Which goal did you accomplish? ");
                 int userSelection;
                 userSelection = int.Parse(Console.ReadLine());
-                bigGoalList.RecordEvent(userSelection);
+                int currentPoints = bigGoalList.RecordEvent(userSelection);
+                Console.WriteLine($"Congratulations, you have earned {currentPoints} points.");
+                Console.WriteLine($"You now have {bigGoalList.DisplayPoints()} total points");
+
                 Console.ReadKey();
             }
 

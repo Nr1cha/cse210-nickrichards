@@ -12,7 +12,15 @@ public class CheckListGoal : Goal
         _numOfTimesRequired = numOfTimesRequired;
     }
 
-    public CheckListGoal(string name, string description, int points, int numOfTimesRequired, int bonusScore, int numOfTimesCompleted, bool isComplete)
+    public CheckListGoal(
+        string name, 
+        string description, 
+        int points, 
+        int numOfTimesRequired, 
+        int bonusScore, 
+        int numOfTimesCompleted, 
+        bool isComplete
+    )
         : base(name, description, points)
     {
         _bonus = bonusScore;
@@ -21,17 +29,23 @@ public class CheckListGoal : Goal
         _isComplete = isComplete;
     }
 
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
         _numOfTimesCompleted += 1;
         if (_numOfTimesCompleted == _numOfTimesRequired)
         {
             _isComplete = true;
         }
+        return CalculatePoints();
     }
-    public bool IsComplete()
+    public override int CalculatePoints()
     {
-        return _isComplete;
+        int totalPoints = _numOfTimesCompleted * base.GetPoints();
+        if (_isComplete == true)
+        {
+            totalPoints += _bonus;
+        }
+        return totalPoints;
     }
 
     public override string DisplayGoal()
@@ -45,9 +59,20 @@ Completed: {_isComplete}");
         return allOfIt;
     }
 
-    public override int CalculatePoints()
+    public override bool GetCompletedStatus()
     {
-        return 5;
+        return _isComplete;
     }
+
+    public override void SetCompletedStatus(bool complete)
+    {
+        _isComplete = complete;
+    }
+
+
+    // public override int CalculatePoints()
+    // {
+    //     return 5;
+    // }
 
 }

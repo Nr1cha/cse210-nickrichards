@@ -59,9 +59,9 @@ public class ManageGoals
                         {
                             goalPoints = int.Parse(goalLine.Replace("Goal Points: ", "").Trim());
                         }
-                        else if (goalLine.StartsWith("number of times completed: "))
+                        else if (goalLine.StartsWith("Number of times completed:"))
                         {
-                            numOfTimesCompleted = int.Parse(goalLine.Replace("number of times completed: ","").Trim());
+                            numOfTimesCompleted = int.Parse(goalLine.Replace("Number of times completed: ", "").Trim());
                         }
                         else if (goalLine.StartsWith("Goal Bonus: "))
                         {
@@ -79,7 +79,7 @@ public class ManageGoals
                     }
                     if (goalType == "SimpleGoal")
                     {
-                        SimpleGoal newSimpleGoal = new SimpleGoal(goalName, goalDescription, goalPoints);
+                        SimpleGoal newSimpleGoal = new SimpleGoal(goalName, goalDescription, goalPoints, completed);
                         _fileEntries.Add(newSimpleGoal);
                     }
                     else if (goalType == "EternalGoal")
@@ -89,7 +89,7 @@ public class ManageGoals
                     }
                     else if (goalType == "CheckListGoal")
                     {
-                        CheckListGoal newCheckListGoal = new CheckListGoal(goalName, goalDescription, goalPoints, numOfTimesRequired, numOfTimesCompleted, goalBonus, completed);
+                        CheckListGoal newCheckListGoal = new CheckListGoal(goalName, goalDescription, goalPoints, numOfTimesRequired, goalBonus, numOfTimesCompleted, completed);
                         _fileEntries.Add(newCheckListGoal);
                     }
                     goalLines.Clear(); // empty list
@@ -104,10 +104,14 @@ public class ManageGoals
     {
         _goalList.Add(goal);
     }
-    public int DisplayPoints(int points) //show the points to the screen
+    public int DisplayPoints() //show the points to the screen
     {
-        _points = points;
-        return _points;
+        int totalPoints = 0;
+        foreach (Goal goal in _goalList)
+        {
+            totalPoints += goal.CalculatePoints();
+        }
+        return totalPoints;
     }
     public string DisplayGoals() //show the goals to the screen //*done
 
@@ -126,14 +130,33 @@ public class ManageGoals
         string goalNames = "";
         foreach (Goal goal in _goalList)
         {
-            int goalIndex = _goalList.IndexOf(goal) +1; 
+            int goalIndex = _goalList.IndexOf(goal) + 1;
             goalNames += ($"{goalIndex}. {goal.GetName()}\n\n");
         }
         return goalNames;
     }
 
-    public void RecordEvent(int userIndex)
+    public int RecordEvent(int userIndex)
     {
-        _goalList[userIndex -1].RecordEvent();
+        return _goalList[userIndex - 1].RecordEvent();
+
+    }
+
+    public string showCompletedGoals()
+    {
+
+        string goalNames = "";
+        foreach (Goal goal in _goalList)
+        {
+            int goalIndex = _goalList.IndexOf(goal) + 1;
+            string completedBox = "[ ]";
+            if (goal.GetCompletedStatus())
+            {
+                completedBox = "[X]";
+            }
+            
+            goalNames += ($"{goalIndex}. {completedBox} {goal.GetName()} ({goal.GetDescription()}) \n\n");
+        }
+        return goalNames;
     }
 }

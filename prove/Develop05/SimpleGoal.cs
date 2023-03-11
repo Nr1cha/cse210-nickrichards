@@ -8,27 +8,34 @@ public class SimpleGoal : Goal
     {
 
     }
-    public SimpleGoal()
-        : base()
+    public SimpleGoal(string name, string description, int points, bool isComplete)
+        : base(name, description, points)
     {
-
+        _isComplete = isComplete;
     }
 
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
         // something will go here to record events;
         _isComplete = true;
+        return CalculatePoints();
     }
 
+    public override int CalculatePoints()
+    {
+        if (_isComplete == true)
+        {
+            return base.GetPoints();
+        }
+        else
+        {
+            return 0;
+        }
+    }
     // public void MarkAsComplete()
     // {
     //     _isComplete = true;
     // }
-
-    public bool IsComplete()
-    {
-        return _isComplete;
-    }
 
     public int GetProgress()
     {
@@ -38,6 +45,16 @@ public class SimpleGoal : Goal
     public void SetProgress(int progress)
     {
         _progress = progress;
+    }
+
+    public override bool GetCompletedStatus()
+    {
+        return _isComplete;
+    }
+
+    public override void SetCompletedStatus(bool complete)
+    {
+        _isComplete = complete;
     }
 
     public override string DisplayGoal()

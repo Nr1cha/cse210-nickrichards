@@ -19,7 +19,7 @@ public abstract class Goal
 
     public virtual void SaveGoal()
     {
-        
+
     }
 
     public virtual int CalculatePoints()
@@ -36,9 +36,9 @@ public abstract class Goal
         return result;
     }
 
-    public virtual void RecordEvent()
+    public virtual int RecordEvent()
     {
-        Console.WriteLine("test");
+        return 0;
     }
 
     public string GetName()
@@ -48,6 +48,37 @@ public abstract class Goal
     public void SetName(string name)
     {
         _name = name;
+    }
+
+    public string GetDescription()
+    {
+        return _description;
+    }
+
+    public void SetDescription(string description)
+    {
+        _description = description;
+    }
+
+
+    public int GetPoints()
+    {
+        return _goalPoints;
+    }
+    public void SetPoints(int goalPoints)
+    {
+        _goalPoints = goalPoints;
+    }
+
+
+    public virtual bool GetCompletedStatus()
+    {
+        return false;
+    }
+
+    public virtual void SetCompletedStatus(bool complete)
+    {
+
     }
 
 }

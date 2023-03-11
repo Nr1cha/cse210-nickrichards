@@ -15,12 +15,13 @@ public class EternalGoal : Goal
 
     public override int CalculatePoints()
     {
-        return 6;
+        return _numOfTimesCompleted * base.GetPoints();
     }
 
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
         _numOfTimesCompleted += 1;
+        return CalculatePoints();
     }
 
     public override string DisplayGoal()
@@ -29,6 +30,16 @@ public class EternalGoal : Goal
         string allOfIt = ($@"{normalGoals}
 number of times completed: {_numOfTimesCompleted}");
         return allOfIt;
+    }
+
+    public override bool GetCompletedStatus()
+    {
+        return false;
+    }
+
+    public override void SetCompletedStatus(bool complete)
+    {
+
     }
 
 }
