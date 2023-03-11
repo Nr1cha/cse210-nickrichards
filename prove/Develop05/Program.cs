@@ -101,8 +101,13 @@ class Program
             else if (userInput == 5)
             {
                 Console.Clear();
-                Console.WriteLine("you selected 5 as your option");
-                Thread.Sleep(1500);
+                Console.WriteLine("The Goals are: ");
+                Console.WriteLine(bigGoalList.DisplayGoalNames());
+                Console.Write("Which goal did you accomplish? ");
+                int userSelection;
+                userSelection = int.Parse(Console.ReadLine());
+                bigGoalList.RecordEvent(userSelection);
+                Console.ReadKey();
             }
 
         }

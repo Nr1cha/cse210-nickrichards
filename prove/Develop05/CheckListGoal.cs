@@ -23,7 +23,11 @@ public class CheckListGoal : Goal
 
     public override void RecordEvent()
     {
-        Console.WriteLine("test3");
+        _numOfTimesCompleted += 1;
+        if (_numOfTimesCompleted == _numOfTimesRequired)
+        {
+            _isComplete = true;
+        }
     }
     public bool IsComplete()
     {

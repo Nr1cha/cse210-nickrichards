@@ -59,6 +59,22 @@ public class ManageGoals
                         {
                             goalPoints = int.Parse(goalLine.Replace("Goal Points: ", "").Trim());
                         }
+                        else if (goalLine.StartsWith("number of times completed: "))
+                        {
+                            numOfTimesCompleted = int.Parse(goalLine.Replace("number of times completed: ","").Trim());
+                        }
+                        else if (goalLine.StartsWith("Goal Bonus: "))
+                        {
+                            goalBonus = int.Parse(goalLine.Replace("Goal Bonus: ", "").Trim());
+                        }
+                        else if (goalLine.StartsWith("Completed: "))
+                        {
+                            completed = bool.Parse(goalLine.Replace("Completed: ", "").Trim());
+                        }
+                        else if (goalLine.StartsWith("Times Required to get bonus: "))
+                        {
+                            numOfTimesRequired = int.Parse(goalLine.Replace("Times Required to get bonus:", "").Trim());
+                        }
 
                     }
                     if (goalType == "SimpleGoal")
@@ -68,12 +84,13 @@ public class ManageGoals
                     }
                     else if (goalType == "EternalGoal")
                     {
-                        EternalGoal newEternalGoal = new EternalGoal(goalName, goalDescription, goalPoints);
+                        EternalGoal newEternalGoal = new EternalGoal(goalName, goalDescription, goalPoints, numOfTimesCompleted);
                         _fileEntries.Add(newEternalGoal);
                     }
                     else if (goalType == "CheckListGoal")
                     {
                         CheckListGoal newCheckListGoal = new CheckListGoal(goalName, goalDescription, goalPoints, numOfTimesRequired, numOfTimesCompleted, goalBonus, completed);
+                        _fileEntries.Add(newCheckListGoal);
                     }
                     goalLines.Clear(); // empty list
                 }
@@ -83,20 +100,17 @@ public class ManageGoals
             _goalList = _fileEntries;
         }
     }
-
     public void AddGoalsToList(Goal goal)
     {
         _goalList.Add(goal);
     }
-
-
     public int DisplayPoints(int points) //show the points to the screen
     {
         _points = points;
         return _points;
     }
-
     public string DisplayGoals() //show the goals to the screen //*done
+
     {
         string goalResult = "";
         foreach (Goal goalItem in _goalList)
@@ -105,5 +119,21 @@ public class ManageGoals
             goalResult += goalItem.DisplayGoal() + "\n\n";
         }
         return goalResult;
+    }
+
+    public string DisplayGoalNames()
+    {
+        string goalNames = "";
+        foreach (Goal goal in _goalList)
+        {
+            int goalIndex = _goalList.IndexOf(goal) +1; 
+            goalNames += ($"{goalIndex}. {goal.GetName()}\n\n");
+        }
+        return goalNames;
+    }
+
+    public void RecordEvent(int userIndex)
+    {
+        _goalList[userIndex -1].RecordEvent();
     }
 }

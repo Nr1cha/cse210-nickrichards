@@ -20,7 +20,7 @@ public class EternalGoal : Goal
 
     public override void RecordEvent()
     {
-        Console.WriteLine("test4");
+        _numOfTimesCompleted += 1;
     }
 
     public override string DisplayGoal()

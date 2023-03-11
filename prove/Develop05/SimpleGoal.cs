@@ -17,13 +17,13 @@ public class SimpleGoal : Goal
     public override void RecordEvent()
     {
         // something will go here to record events;
-        Console.WriteLine("test2");
-    }
-
-    public void MarkAsComplete()
-    {
         _isComplete = true;
     }
+
+    // public void MarkAsComplete()
+    // {
+    //     _isComplete = true;
+    // }
 
     public bool IsComplete()
     {
@@ -38,6 +38,14 @@ public class SimpleGoal : Goal
     public void SetProgress(int progress)
     {
         _progress = progress;
+    }
+
+    public override string DisplayGoal()
+    {
+        string normalGoals = base.DisplayGoal();
+        string allOfIt = ($@"{normalGoals}
+Completed: {_isComplete}");
+        return allOfIt;
     }
 
 }
