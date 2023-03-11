@@ -20,9 +20,9 @@ class Program
             Console.WriteLine("Menu Options:");
             Console.WriteLine("     1. Create New Goal");
             Console.WriteLine("     2. List Goals");
-            Console.WriteLine("     3. Save Goals"); // * to file 1st
-            Console.WriteLine("     4. Load Goals");//todo from file 3rd
-            Console.WriteLine("     5. Record Event"); //todo 2nd for a simple goal, mark it as complete. for eternal goal, add 1 to number of times completed, for checklist goal, add one to number of times completed and see if the checklist is complete
+            Console.WriteLine("     3. Save Goals");
+            Console.WriteLine("     4. Load Goals");
+            Console.WriteLine("     5. Record Event"); 
             Console.WriteLine("     6. Quit");
             Console.Write("Select a choice from the menu: ");
             userInput = int.Parse(Console.ReadLine());
@@ -44,7 +44,7 @@ class Program
                 Console.WriteLine("Enter goal description:");
                 string goalDescription = Console.ReadLine(); 
                 Console.WriteLine("What is the amount of points associated with this goal? ");
-                int totalPoints = int.Parse(Console.ReadLine()); // todo add totalPoints to a list of totalPoints
+                int totalPoints = int.Parse(Console.ReadLine()); 
 
                 if (userInput2 == 1)
                 {
