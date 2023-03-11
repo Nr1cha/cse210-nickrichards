@@ -31,13 +31,13 @@ public class ManageGoals
         _goalList.Add(goal);
     }
 
-    public int DisplayPoints(int points)
+    public int DisplayPoints(int points) //show the points to the screen
     {
         _points = points;
         return _points;
     }
 
-    public string DisplayGoals()
+    public string DisplayGoals() //show the goals to the screen
     {
         List<string> goalEntry = new List<string>();
         foreach (Goal goalItem in _goalList)
