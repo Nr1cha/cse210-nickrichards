@@ -22,8 +22,7 @@ public class ManageGoals
         using (StreamReader textFile = new StreamReader(filename))
         {
             string line;
-            List<Goal> _fileEntries = new List<Goal>();
-            // Goal newGoal;
+            List<Goal> fileEntries = new List<Goal>();
             List<string> goalLines = new List<string>();
             while ((line = textFile.ReadLine()) != null)
             {
@@ -79,24 +78,24 @@ public class ManageGoals
                     if (goalType == "SimpleGoal")
                     {
                         SimpleGoal newSimpleGoal = new SimpleGoal(goalName, goalDescription, goalPoints, completed);
-                        _fileEntries.Add(newSimpleGoal);
+                        fileEntries.Add(newSimpleGoal);
                     }
                     else if (goalType == "EternalGoal")
                     {
                         EternalGoal newEternalGoal = new EternalGoal(goalName, goalDescription, goalPoints, numOfTimesCompleted);
-                        _fileEntries.Add(newEternalGoal);
+                        fileEntries.Add(newEternalGoal);
                     }
                     else if (goalType == "CheckListGoal")
                     {
                         CheckListGoal newCheckListGoal = new CheckListGoal(goalName, goalDescription, goalPoints, numOfTimesRequired, goalBonus, numOfTimesCompleted, completed);
-                        _fileEntries.Add(newCheckListGoal);
+                        fileEntries.Add(newCheckListGoal);
                     }
                     goalLines.Clear(); // empty list
                 }
             }
 
 
-            _goalList = _fileEntries;
+            _goalList = fileEntries;
         }
     }
     public void AddGoalsToList(Goal goal)
