@@ -32,9 +32,9 @@ class Program
             }
             else if (userInput == 2) // the rest below here is the same
             {
-                Bard welcomeBard = new Bard();
-                string welcome = welcomeBard.DisplayBard();
-                Console.WriteLine(welcome);
+                Bard welcomeBard = new Bard(); // quick test
+                string welcome = welcomeBard.DisplayBard(); // test
+                Console.WriteLine(welcome); // test
                 Thread.Sleep(2000);
             }
             else if (userInput == 3)
