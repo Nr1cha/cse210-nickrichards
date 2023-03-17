@@ -41,7 +41,7 @@ class Program
             {
                 Cleric welcomeCleric = new Cleric();
                 string welcome = welcomeCleric.DisplayCleric();
-                Console.WriteLine(welcome);
+                Console.WriteLine(welcome); // test
                 Thread.Sleep(2000);
             }
             else if (userInput == 4)
