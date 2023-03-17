@@ -30,7 +30,7 @@ class Program
                 Console.WriteLine(message); //displaying the string
                 Thread.Sleep(2000); // delaying the message
             }
-            else if (userInput == 2)
+            else if (userInput == 2) // the rest below here is the same
             {
                 Bard welcomeBard = new Bard();
                 string welcome = welcomeBard.DisplayBard();
