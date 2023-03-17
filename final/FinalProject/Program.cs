@@ -35,7 +35,7 @@ class Program
                 Bard welcomeBard = new Bard(); // quick test
                 string welcome = welcomeBard.DisplayBard(); // test
                 Console.WriteLine(welcome); // test
-                Thread.Sleep(2000);
+                Thread.Sleep(2000); //test
             }
             else if (userInput == 3)
             {
