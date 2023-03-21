@@ -30,18 +30,18 @@ class Program
                 Console.WriteLine(message); //displaying the string
                 Thread.Sleep(2000); // delaying the message
             }
-            else if (userInput == 2) // the rest below here is the same
+            else if (userInput == 2) // below is for testing the call out to the other class methods
             {
-                Bard welcomeBard = new Bard(); // quick test
-                string welcome = welcomeBard.DisplayBard(); // test
-                Console.WriteLine(welcome); // test
-                Thread.Sleep(2000); //test
+                Bard welcomeBard = new Bard();
+                string welcome = welcomeBard.DisplayBard();
+                Console.WriteLine(welcome);
+                Thread.Sleep(2000);
             }
             else if (userInput == 3)
             {
                 Cleric welcomeCleric = new Cleric();
                 string welcome = welcomeCleric.DisplayCleric();
-                Console.WriteLine(welcome); //test
+                Console.WriteLine(welcome);
                 Thread.Sleep(2000);
             }
             else if (userInput == 4)
