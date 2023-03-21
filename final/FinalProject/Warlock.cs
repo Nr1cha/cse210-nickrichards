@@ -1,5 +1,13 @@
 public class Warlock : SharedCharacterClasses
 {
+
+
+    public Warlock(string characterName, string race, string background, List<string> inventory)
+    : base(characterName, race, background, inventory)
+    {
+        // Character specific items
+
+    }
     private string _warlockSkill1;
     private string _warlockSkill2;
     private string _warlockSkill3;
