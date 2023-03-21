@@ -25,58 +25,68 @@ class Program
 
             if (userInput == 1)
             {
-                Barbarian welcome = new Barbarian(); //calling the class
-                string message = welcome.DisplayBarbarian(); // adding the class method to a string
-                Console.WriteLine(message); //displaying the string
-                Thread.Sleep(2000); // delaying the message
+                var player = new Barbarian(
+                    characterName: "Barbarian Name",
+                    race: "High elf",
+                    background: "Nomad in the woods, traveling and taking contracts to make a living.",
+                    inventory: new List<string> { "item1", "item2", "item3" },
+                    bSkill1: ("fighter"),
+                    bSkill2: ("Tank"),
+                    bSkill3: ("Perception")
+                );
+                Console.WriteLine($"{player.DisplayBarbarian}");
+                // Barbarian welcome = new Barbarian(); //calling the class
+                // string message = welcome.DisplayBarbarian(); // adding the class method to a string
+                // Console.WriteLine(message); //displaying the string
+                Console.ReadKey();
             }
             else if (userInput == 2) // below is for testing the call out to the other class methods
             {
-                Bard welcomeBard = new Bard();
-                string welcome = welcomeBard.DisplayBard();
-                Console.WriteLine(welcome);
+                // Bard welcomeBard = new Bard();
+                // string welcome = welcomeBard.DisplayBard();
+                // Console.WriteLine(welcome);
                 Thread.Sleep(2000);
             }
             else if (userInput == 3)
             {
-                Cleric welcomeCleric = new Cleric();
-                string welcome = welcomeCleric.DisplayCleric();
-                Console.WriteLine(welcome);
+                // Cleric welcomeCleric = new Cleric();
+                // string welcome = welcomeCleric.DisplayCleric();
+                // Console.WriteLine(welcome);
                 Thread.Sleep(2000);
             }
             else if (userInput == 4)
             {
-                Druid welcomeDruid = new Druid();
-                string welcome = welcomeDruid.DisplayDruid();
-                Console.WriteLine(welcome);
+                // Druid welcomeDruid = new Druid();
+                // string welcome = welcomeDruid.DisplayDruid();
+                // Console.WriteLine(welcome);
                 Thread.Sleep(2000);
             }
             else if (userInput == 5)
             {
-                Monk welcomeMonk = new Monk();
-                string welcome = welcomeMonk.DisplayMonk();
-                Console.WriteLine(welcome);
+                // Monk welcomeMonk = new Monk();
+                // string welcome = welcomeMonk.DisplayMonk();
+                // Console.WriteLine(welcome);
                 Thread.Sleep(2000);
             }
             else if (userInput == 6)
             {
-                Ranger welcomeRanger = new Ranger();
-                string welcome = welcomeRanger.DisplayRanger();
-                Console.WriteLine(welcome);
+                // Ranger welcomeRanger = new Ranger();
+                // string welcome = welcomeRanger.DisplayRanger();
+                // Console.WriteLine(welcome);
                 Thread.Sleep(2000);
             }
             else if (userInput == 7)
             {
-                Warlock welcomeWarlock = new Warlock();
-                string welcome = welcomeWarlock.DisplayWarlock();
-                Console.WriteLine(welcome);
+                // Warlock welcomeWarlock = new Warlock();
+                // string welcome = welcomeWarlock.DisplayWarlock();
+                // Console.WriteLine(welcome);
                 Thread.Sleep(2000);
             }
             else if (userInput == 8)
             {
-                Wizard welcomeWizard = new Wizard();
-                string welcome = welcomeWizard.DisplayWizard();
-                Console.WriteLine(welcome);
+                // Wizard welcomeWizard = new Wizard();
+                // string welcome = welcomeWizard.DisplayWizard();
+                // Console.WriteLine(welcome);
                 Thread.Sleep(2000);
             }
         }

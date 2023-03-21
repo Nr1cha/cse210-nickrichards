@@ -11,9 +11,18 @@ public class SharedCharacterClasses
 public SharedCharacterClasses(string characterName, string race, string background, List<string> inventory )
 {
     _characterName = characterName;
-    _race = race;
     _background = background;
+    _race = race;
     _inventory = inventory;
+}
+
+
+public virtual void DisplayBase()
+{
+    Console.WriteLine($"Character Name: {_characterName}");
+    Console.WriteLine($"Background: {_background}");
+    Console.WriteLine($"Race: {_race}");
+    Console.WriteLine($"Inventory: {_inventory}");
 }
 
 public void AddToInventory(string item)
