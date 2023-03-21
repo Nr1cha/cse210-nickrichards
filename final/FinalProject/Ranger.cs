@@ -5,6 +5,12 @@ public class Ranger : SharedCharacterClasses
     private string _rangerSkill3;
 
 
+
+
+    public string DisplayRangerTraits()
+    {
+        return ("");
+    }
     public string DisplayRanger()
     {
         return ("welcome to the Ranger class.");

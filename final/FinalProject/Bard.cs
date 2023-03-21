@@ -5,6 +5,11 @@ public class Bard : SharedCharacterClasses
     private string _bardSkill3;
 
 
+
+    public string DisplayBardTraits()
+    {
+        return ("");
+    }
     public string DisplayBard()
     {
         return ("welcome to the Bard class.");
