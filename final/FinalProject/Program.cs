@@ -34,7 +34,7 @@ class Program
                     bSkill2: ("Tank"),
                     bSkill3: ("Perception")
                 );
-                Console.WriteLine($"{player.DisplayBarbarian}");
+                player.DisplayCharacter();
                 // Barbarian welcome = new Barbarian(); //calling the class
                 // string message = welcome.DisplayBarbarian(); // adding the class method to a string
                 // Console.WriteLine(message); //displaying the string

@@ -1,30 +1,26 @@
-class Barbarian : SharedCharacterClasses
+public class Barbarian : SharedCharacterClasses
 {
-    private string _barbarianSkill1 { get; }
-    private string _barbarianSkill2 { get; }
-    private string _barbarianSkill3 { get; }
+    public string BarbarianSkill1 { get; private set; }
+    public string BarbarianSkill2 { get; private set; }
+    public string BarbarianSkill3 { get; private set; }
 
     public Barbarian(string characterName, string race, string background, List<string> inventory, string bSkill1, string bSkill2, string bSkill3) //all items to be shown
-        : base(characterName, race, background, inventory) /* these are items from the base class */
+        : base(characterName, race, background, inventory)
     {
         // Character specific items
         // these are items that are different than what's in the base class
-        _barbarianSkill1 = bSkill1;
-        _barbarianSkill2 = bSkill2;
-        _barbarianSkill3 = bSkill3;
+        BarbarianSkill1 = bSkill1;
+        BarbarianSkill2 = bSkill2;
+        BarbarianSkill3 = bSkill3;
 
 
     }
 
-    public override void DisplayBarbarian()
+    public override void DisplayCharacter()
     {
-        base.DisplayBase();
-        Console.WriteLine($"Skill 1: {_barbarianSkill1}");
-        Console.WriteLine($"Skill 2: {_barbarianSkill2}");
-        Console.WriteLine($"Skill 3: {_barbarianSkill3}");
+        base.DisplayCharacter();
+        Console.WriteLine($"Skill 1: {BarbarianSkill1}");
+        Console.WriteLine($"Skill 2: {BarbarianSkill2}");
+        Console.WriteLine($"Skill 3: {BarbarianSkill3}");
     }
-    // public string DisplayBarbarian()
-    // {
-    //     return ("welcome to the barbarian class.");
-    // }
 }
