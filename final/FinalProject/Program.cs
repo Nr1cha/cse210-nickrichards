@@ -5,6 +5,47 @@ class Program
 {
     static void Main(string[] args)
     {
+
+        List<string> dndSkills = new List<string>() {
+            "Acrobatics",
+            "Animal Handling",
+            "Arcana",
+            "Athletics",
+            "Deception",
+            "History",
+            "Insight",
+            "Intimidation",
+            "Investigation",
+            "Medicine",
+            "Nature",
+            "Perception",
+            "Performance",
+            "Persuasion",
+            "Religion",
+            "Sleight of Hand",
+            "Stealth",
+            "Survival"
+        };
+
+        List<string> dndSavingThrows = new List<string>() {
+            "Strength",
+            "Dexterity",
+            "Constitution",
+            "Inteligence",
+            "Wisdom",
+            "Charisma",
+        };
+
+        List<string> dndAbilities =new List<string>() {
+            "Strength",
+            "Dexterity",
+            "Constitution",
+            "Intelligence",
+            "Wisdom",
+            "Charisma",
+        };
+
+
         int userInput; //number input from user
         do
         {
