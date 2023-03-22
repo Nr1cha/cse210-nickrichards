@@ -12,8 +12,6 @@ public class Barbarian : SharedCharacterClasses
         BarbarianSkill1 = bSkill1;
         BarbarianSkill2 = bSkill2;
         BarbarianSkill3 = bSkill3;
-
-
     }
 
     public override void DisplayCharacter()
