@@ -8,6 +8,6 @@ public class DerivedClass : BaseClass
     }
     public override void DisplayName() // how i want to display it
     {
-        base.DisplayName("Nick", "richards"); //hello nick
+        base.DisplayName("Nick", "richards"); //todo figure out why this is wrong
     }
 }
