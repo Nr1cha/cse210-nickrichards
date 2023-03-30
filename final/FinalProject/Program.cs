@@ -5,6 +5,30 @@ class Program
 {
     static void Main(string[] args)
     {
+        List<string> dndInventory = new List<string>() {
+            "Potion of Healing",
+            "Torch",
+            "Climbing Gear",
+            "Grappling Hook",
+            "Spyglass",
+            "Lockpicks",
+            "Shovel",
+            "Lantern",
+            "Waterskin",
+            "Flint and Steel",
+            "Bedroll",
+            "Quill and Ink",
+            "Spellbook",
+            "Potion of Invisibility",
+            "Antitoxin",
+            "Wand of Magic Missiles",
+            "Ring of Protection",
+            "Cloak of Elvenkind",
+            "Bag of Tricks",
+            "Portable Ram",
+            "Decanter of Endless Water",
+            "Immovable Rod"
+        };
 
         List<string> dndSkills = new List<string>() {
             "Acrobatics",
