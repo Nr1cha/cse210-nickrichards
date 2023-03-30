@@ -33,13 +33,13 @@ class Program
                     race: "High elf",
                     background: "Nomad in the woods, traveling and taking contracts to make a living.",
                     inventory: new List<string> { "item1", "item2", "item3" }
-                    
                 );
+                Console.WriteLine($"");
                 Console.WriteLine($"here is a list of specific skills to the barbarian. ");
                 Console.WriteLine($"");
                 player.DisplaySpecificSkills();
                 Console.WriteLine($"");
-                Console.Write($"please pick one skill for this character.");
+                Console.WriteLine($"please pick one skill for this character: ");
                 int barbPick = int.Parse(Console.ReadLine());
                 player.SetBarbarianSkill(barbPick);
                 player.DisplayCharacter();

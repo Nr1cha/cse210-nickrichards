@@ -14,13 +14,13 @@ public class Barbarian : SharedCharacterClasses
     }
 
     private List<string> _barbarianSkills = new List<string>() {
-        "1. Rage",
-        "2. Unarmored Defense",
-        "3. Reckless Attack",
-        "4. Danger Sense",
-        "5. Feral Instinct",
-        "6. Brutal Critical",
-        "7. Primal Path"
+        "Rage",
+        "Unarmored Defense",
+        "Reckless Attack",
+        "Danger Sense",
+        "Feral Instinct",
+        "Brutal Critical",
+        "Primal Path"
     };
 
     Random rand = new Random();
@@ -37,19 +37,17 @@ public class Barbarian : SharedCharacterClasses
 
     public void DisplaySpecificSkills()
     {
+        int num = 1;
         foreach(string skill in _barbarianSkills)
         {
-            Console.WriteLine($"{skill}");
+            Console.WriteLine($"{num}. {skill}");
+            num++;
         }
     }
     public override void DisplayCharacter()
     {
         Console.Clear();
         base.DisplayCharacter();
-        // Console.WriteLine(dndSkills[test]);
-        // Console.WriteLine($"test item from derived class barbarian");
         Console.WriteLine($"barbarian specific skill: {_barbarianS1}");
-        // Console.WriteLine($"Skill 3: {dndSkills[test]}");
-
     }
 }
