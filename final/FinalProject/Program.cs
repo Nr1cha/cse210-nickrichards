@@ -29,7 +29,7 @@ class Program
                     characterName: "Barbarian Name",
                     race: "High elf",
                     background: "Nomad in the woods, traveling and taking contracts to make a living.",
-                    inventory: new List<string> { "item1", "item2", "item3" },
+                    // inventory: new List<string> { "item1", "item2", "item3" },
                     bSkill1: ("fighter"),
                     bSkill2: ("Tank"),
                     bSkill3: ("Perception")

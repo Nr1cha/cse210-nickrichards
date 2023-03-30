@@ -73,15 +73,13 @@ public class Barbarian : SharedCharacterClasses
         // Character specific items
         // these are items that are different than what's in the base class
         BarbarianSkill1 = bSkill1;
-        BarbarianSkill2 = bSkill2;
-        BarbarianSkill3 = bSkill3;
+
     }
 
     public override void DisplayCharacter()
     {
         base.DisplayCharacter();
         Console.WriteLine($"Skill 1: {BarbarianSkill1}");
-        Console.WriteLine($"Skill 2: {BarbarianSkill2}");
-        Console.WriteLine($"Skill 3: {BarbarianSkill3}");
+
     }
 }
