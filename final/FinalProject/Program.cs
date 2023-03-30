@@ -24,15 +24,15 @@ class Program
             userInput = int.Parse(Console.ReadLine());
 
             if (userInput == 1)
+            
+
             {
                 var player = new Barbarian(
                     characterName: "Barbarian Name",
                     race: "High elf",
                     background: "Nomad in the woods, traveling and taking contracts to make a living.",
-                    // inventory: new List<string> { "item1", "item2", "item3" },
-                    bSkill1: ("fighter"),
-                    bSkill2: ("Tank"),
-                    bSkill3: ("Perception")
+                    inventory: new List<string> { "item1", "item2", "item3" }
+                    
                 );
                 player.DisplayCharacter();
                 // Barbarian welcome = new Barbarian(); //calling the class

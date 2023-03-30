@@ -67,16 +67,17 @@ public class SharedCharacterClasses
     private string _race { get; set; }
     private string _background { get; set; }
     private List<string> _inventory { get; set; }
+    private string _skill1 {get; set;}
 
-
-
-
+    Random rand = new Random();
     public SharedCharacterClasses(string characterName, string race, string background, List<string> inventory)
     {
         _characterName = characterName;
         _background = background;
         _race = race;
         _inventory = inventory;
+        int test = rand.Next(dndSkills.Count);
+        _skill1 = dndSkills[test];
     }
 
 
@@ -86,6 +87,7 @@ public class SharedCharacterClasses
         Console.WriteLine($"Background: {_background}");
         Console.WriteLine($"Race: {_race}");
         Console.WriteLine($"Inventory: {_inventory}");
+        Console.WriteLine($"Skill 1: {_skill1}");
     }
 
     // public void AddToInventory(string item)
