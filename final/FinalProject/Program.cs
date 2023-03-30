@@ -27,6 +27,7 @@ class Program
             
 
             {
+                Console.WriteLine($"");
                 var player = new Barbarian(
                     characterName: "Barbarian Name",
                     race: "High elf",
@@ -34,10 +35,14 @@ class Program
                     inventory: new List<string> { "item1", "item2", "item3" }
                     
                 );
+                Console.WriteLine($"here is a list of specific skills to the barbarian. ");
+                Console.WriteLine($"");
+                player.DisplaySpecificSkills();
+                Console.WriteLine($"");
+                Console.Write($"please pick one skill for this character.");
+                int barbPick = int.Parse(Console.ReadLine());
+                player.SetBarbarianSkill(barbPick);
                 player.DisplayCharacter();
-                // Barbarian welcome = new Barbarian(); //calling the class
-                // string message = welcome.DisplayBarbarian(); // adding the class method to a string
-                // Console.WriteLine(message); //displaying the string
                 Console.ReadKey();
             }
             else if (userInput == 2) // below is for testing the call out to the other class methods

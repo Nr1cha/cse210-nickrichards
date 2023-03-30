@@ -10,7 +10,7 @@ class Program
         Console.WriteLine($"what is your lastname?");
         string lastName = Console.ReadLine();
 
-        DerivedClass derived = new DerivedClass(firstName);
-        derived.DisplayName();
+        // DerivedClass derived = new DerivedClass(firstName);
+        // derived.DisplayName();
     }
 }
