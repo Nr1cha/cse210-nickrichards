@@ -44,10 +44,11 @@ public class Barbarian : SharedCharacterClasses
             num++;
         }
     }
-    public override void DisplayCharacter()
+    public override void DisplayCharacter() //!random skill from base
     {
         Console.Clear();
         base.DisplayCharacter();
+        Console.WriteLine($"");
         Console.WriteLine($"barbarian specific skill: {_barbarianS1}");
     }
 }

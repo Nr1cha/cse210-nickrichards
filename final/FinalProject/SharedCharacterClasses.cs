@@ -1,6 +1,6 @@
 public class SharedCharacterClasses
 {
-            List<string> dndInventory = new List<string>() {
+        List<string> dndInventory = new List<string>() {
             "Potion of Healing",
             "Torch",
             "Climbing Gear",

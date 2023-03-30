@@ -42,7 +42,7 @@ class Program
                 Console.WriteLine($"please pick one skill for this character: ");
                 int barbPick = int.Parse(Console.ReadLine());
                 player.SetBarbarianSkill(barbPick);
-                player.DisplayCharacter();
+                player.DisplayCharacter(); //! random skill from base
                 Console.ReadKey();
             }
             else if (userInput == 2) // below is for testing the call out to the other class methods
