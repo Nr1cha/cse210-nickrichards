@@ -70,7 +70,7 @@ public class SharedCharacterClasses
     private string _skill1 {get; set;}
 
     Random rand = new Random();
-    public SharedCharacterClasses(string characterName, string race, string background)
+    public SharedCharacterClasses(string characterName, string race, string background) //window from program
     {
         _characterName = characterName;
         _background = background;

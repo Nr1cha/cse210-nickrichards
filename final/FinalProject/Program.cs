@@ -64,7 +64,7 @@ class Program
                 Clear();
                 WriteLine($"Skills specific to the bard. \n");
                 bard.DisplaySpecificSkills();
-                WriteLine($"\nplease pick one skill for this character: ");
+                WriteLine($"\nplease select one skill for this character: ");
                 int bardPick = int.Parse(ReadLine());
                 bard.SetBarbarianSkill(bardPick); //! bard specific skill
                 bard.DisplayCharacter(); //! random skill from base
