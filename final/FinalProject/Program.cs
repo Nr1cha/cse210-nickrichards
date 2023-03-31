@@ -31,8 +31,7 @@ class Program
                 var player = new Barbarian(
                     characterName: "Barbarian Name",
                     race: "High elf",
-                    background: "Nomad in the woods, traveling and taking contracts to make a living.",
-                    inventory: new List<string> { "item1", "item2", "item3" }
+                    background: "Nomad in the woods, traveling and taking contracts to make a living."
                 );
                 Console.WriteLine($"");
                 Console.WriteLine($"here is a list of specific skills to the barbarian. ");

@@ -18,8 +18,8 @@ public class Bard : SharedCharacterClasses
     };
 
 
-    public Bard(string characterName, string race, string background, List<string> inventory)
-    : base(characterName, race, background, inventory)
+    public Bard(string characterName, string race, string background)
+    : base(characterName, race, background)
     {
         // Character specific items
 

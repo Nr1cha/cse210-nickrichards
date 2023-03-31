@@ -26,8 +26,8 @@ public class Barbarian : SharedCharacterClasses
     Random rand = new Random();
     
 
-    public Barbarian(string characterName, string race, string background, List<string> inventory) //all items to be shown
-        : base(characterName, race, background, inventory) // what its going to show from the base class
+    public Barbarian(string characterName, string race, string background) //all items to be shown
+        : base(characterName, race, background) // what its going to show from the base class
     {
         // Character specific items
         // these are items that are different than what's in the base class

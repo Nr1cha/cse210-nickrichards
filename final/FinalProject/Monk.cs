@@ -67,8 +67,8 @@ public class Monk : SharedCharacterClasses
     private string _monkSkill2;
     private string _monkSkill3;
 
-    public Monk(string characterName, string race, string background, List<string> inventory)
-    : base(characterName, race, background, inventory)
+    public Monk(string characterName, string race, string background)
+    : base(characterName, race, background)
     {
         // Character specific items
 

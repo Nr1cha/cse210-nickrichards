@@ -14,8 +14,8 @@ public class Cleric : SharedCharacterClasses
         "Channel Divinity: Divine Strike"
     };
 
-    public Cleric(string characterName, string race, string background, List<string> inventory)
-        : base(characterName, race, background, inventory)
+    public Cleric(string characterName, string race, string background)
+        : base(characterName, race, background)
     {
         // Character specific items
 

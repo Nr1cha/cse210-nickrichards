@@ -66,18 +66,24 @@ public class SharedCharacterClasses
     private string _characterName { get; set; }
     private string _race { get; set; }
     private string _background { get; set; }
-    private List<string> _inventory { get; set; }
+    private string _inventory { get; set; }
     private string _skill1 {get; set;}
 
     Random rand = new Random();
-    public SharedCharacterClasses(string characterName, string race, string background, List<string> inventory)
+    public SharedCharacterClasses(string characterName, string race, string background)
     {
         _characterName = characterName;
         _background = background;
         _race = race;
-        _inventory = inventory;
-        int test = rand.Next(dndSkills.Count);
-        _skill1 = dndSkills[test];
+
+        // * random skill from base class
+        int skillIndex = rand.Next(dndSkills.Count);
+        _skill1 = dndSkills[skillIndex];
+
+        // todo inventory item from inventory list
+        int inventoryIndex = rand.Next(dndInventory.Count);
+        _inventory = dndInventory[inventoryIndex];
+
     }
 
 
