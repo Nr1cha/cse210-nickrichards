@@ -45,7 +45,7 @@ public class Bard : SharedCharacterClasses
             num++;
         }
     }
-    public override void DisplayCharacter() //!random skill from base
+    public override void DisplayCharacter() //!random skill from base for this class
     {
         Console.Clear(); //! this shows things in the base class
         base.DisplayCharacter();
