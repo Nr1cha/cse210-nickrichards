@@ -4,8 +4,26 @@ using static System.Console;
 
 class Program
 {
+
+    static SharedCharacterClasses QuestionsForClass(Type clazz)
+    {
+        Clear();
+        // * work on the input for the name, race and background
+        WriteLine($"What is your Characters name?");
+        string charName = ReadLine();
+
+        WriteLine($"What is your Characters race?");
+        string charRace = ReadLine();
+
+        WriteLine($"What is your Characters Background? ");
+        string charBackground = ReadLine();
+        SharedCharacterClasses character = (SharedCharacterClasses)Activator.CreateInstance(clazz, charName, charRace, charBackground);
+        return character;
+    }
+
     static void Main(string[] args)
     {
+
         int userInput; //number input from user
         do
         {
@@ -25,22 +43,11 @@ class Program
             userInput = int.Parse(ReadLine());
 
             if (userInput == 1)
-            
+
 
             {
-                Clear();
-                // * work on the input for the name, race and background
-                WriteLine($"What is your Characters name?");
-                string charName = ReadLine();
-
-                WriteLine($"What is your Characters race?");
-                string charRace = ReadLine();
-
-                WriteLine($"What is your Characters Background? ");
-                string charBackground = ReadLine();
-
-                Barbarian barbarian = new Barbarian(charName, charRace, charBackground);
-
+                Barbarian barbarian = (Barbarian)QuestionsForClass(typeof(Barbarian));
+                
                 Clear();
                 WriteLine($"Skills specific to the barbarian. \n");
                 barbarian.DisplaySpecificSkills();
@@ -52,15 +59,7 @@ class Program
             }
             else if (userInput == 2) // below is for testing the call out to the other class methods
             {
-                WriteLine($"What is your Characters name?");
-                string charName = ReadLine();
-
-                WriteLine($"What is your Characters race?");
-                string charRace = ReadLine();
-
-                WriteLine($"What is your Characters Background? ");
-                string charBackground = ReadLine();
-                Bard bard = new Bard(charName, charRace, charBackground);
+                Bard bard = (Bard)QuestionsForClass(typeof(Bard));
 
                 Clear();
                 WriteLine($"Skills specific to the bard. \n");
