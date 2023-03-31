@@ -93,7 +93,7 @@ public class SharedCharacterClasses
         Console.WriteLine($"Background: {_background}");
         Console.WriteLine($"Race: {_race}\n");
         Console.WriteLine($"Below are items that any character can start with at random");
-        Console.WriteLine($"Inventory: {_inventory}");
+        Console.WriteLine($"Inventory Item(s): {_inventory}");
         Console.WriteLine($"Universal Skill: {_skill1}");
     }
 

@@ -27,22 +27,28 @@ class Program
             
 
             {
+                Console.Clear();
+                // * work on the input for the name, race and background
+                Console.WriteLine($"What is your Characters name?");
+                string charName = Console.ReadLine();
+
+                Console.WriteLine($"What is your Characters race?");
+                string charRace = Console.ReadLine();
+
+                Console.WriteLine($"What is your Characters Background? ");
+                string charBackground = Console.ReadLine();
+
+                Barbarian barbarian = new Barbarian(charName, charRace, charBackground);
+
+                Console.Clear();
+                Console.WriteLine($"Skills specific to the barbarian. ");
                 Console.WriteLine($"");
-                var player = new Barbarian(
-                    characterName: "Barbarian Name",
-                    race: "High elf",
-                    background: "Nomad in the woods, traveling and taking contracts to make a living."
-                );
-                // todo work on the input for the name, race and background
-                Console.WriteLine($"");
-                Console.WriteLine($"here is a list of specific skills to the barbarian. ");
-                Console.WriteLine($"");
-                player.DisplaySpecificSkills();
+                barbarian.DisplaySpecificSkills();
                 Console.WriteLine($"");
                 Console.WriteLine($"please pick one skill for this character: ");
                 int barbPick = int.Parse(Console.ReadLine());
-                player.SetBarbarianSkill(barbPick); //! barbarian specific skill
-                player.DisplayCharacter(); //! random skill from base
+                barbarian.SetBarbarianSkill(barbPick); //! barbarian specific skill
+                barbarian.DisplayCharacter(); //! random skill from base
                 Console.ReadKey();
             }
             else if (userInput == 2) // below is for testing the call out to the other class methods
