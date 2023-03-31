@@ -3,8 +3,17 @@ public class Bard : SharedCharacterClasses
 
 
     private string _bardSkill1;
-    private string _bardSkill2;
-    private string _bardSkill3;
+    // private string _bardSkill2;
+    // private string _bardSkill3;
+
+    public string GetBardSkill()
+    {
+        return _bardSkill1;
+    }
+    public void SetBarbarianSkill(int bardSkill1)
+    {
+        _bardSkill1 = _bardSkills[bardSkill1 - 1];
+    }
 
 
     List<string> _bardSkills = new List<string>(){
@@ -27,12 +36,21 @@ public class Bard : SharedCharacterClasses
 
 
 
-    public string DisplayBardTraits()
+    public void DisplaySpecificSkills()
     {
-        return ("");
+        int num = 1;
+        foreach (string skill in _bardSkills)
+        {
+            Console.WriteLine($"{num}. {skill}");
+            num++;
+        }
     }
-    public string DisplayBard()
+    public override void DisplayCharacter() //!random skill from base
     {
-        return ("welcome to the Bard class.");
+        Console.Clear(); //! this shows things in the base class
+        base.DisplayCharacter();
+        Console.WriteLine($"");
+        Console.WriteLine($"Below are items that are specific to the bard class");
+        Console.WriteLine($"Barbarian specific skill: {_bardSkill1}");
     }
 }

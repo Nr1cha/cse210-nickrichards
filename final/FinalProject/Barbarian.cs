@@ -1,6 +1,6 @@
 public class Barbarian : SharedCharacterClasses
 {
-    private string _barbarianS1 { get; set; }
+    private string _barbarianS1;
     // private string BarbarianSkill2 { get; set; }
     // private string BarbarianSkill3 { get; set; }
 
