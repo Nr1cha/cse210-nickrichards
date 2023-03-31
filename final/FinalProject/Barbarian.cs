@@ -46,9 +46,10 @@ public class Barbarian : SharedCharacterClasses
     }
     public override void DisplayCharacter() //!random skill from base
     {
-        Console.Clear();
+        Console.Clear(); //! this shows things in the base class
         base.DisplayCharacter();
         Console.WriteLine($"");
-        Console.WriteLine($"barbarian specific skill: {_barbarianS1}");
+        Console.WriteLine($"Below are items that are specific to the barbarian class");
+        Console.WriteLine($"Barbarian specific skill: {_barbarianS1}");
     }
 }

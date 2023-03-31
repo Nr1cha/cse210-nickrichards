@@ -91,9 +91,10 @@ public class SharedCharacterClasses
     {
         Console.WriteLine($"Character Name: {_characterName}");
         Console.WriteLine($"Background: {_background}");
-        Console.WriteLine($"Race: {_race}");
+        Console.WriteLine($"Race: {_race}\n");
+        Console.WriteLine($"Below are items that any character can start with at random");
         Console.WriteLine($"Inventory: {_inventory}");
-        Console.WriteLine($"Skill 1: {_skill1}");
+        Console.WriteLine($"Universal Skill: {_skill1}");
     }
 
     // public void AddToInventory(string item)
