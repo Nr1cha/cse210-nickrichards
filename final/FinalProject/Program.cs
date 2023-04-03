@@ -124,8 +124,16 @@ class Program
             }
             else if (userInput == 7) //warlock
             {
+                Warlock warlock = (Warlock)QuestionsForClass(typeof(Warlock));
 
-                Thread.Sleep(2000);
+                Clear();
+                WriteLine($"Skills specific to the warlock. \n");
+                warlock.DisplaySpecificSkills();
+                WriteLine($"\nplease select one skill for this character: ");
+                int warlockPick = int.Parse(ReadLine());
+                warlock.SetWarlockSkill(warlockPick); //! warlock specific skill
+                warlock.DisplayCharacter(); //! random skill from base
+                ReadKey();
             }
             else if (userInput == 8) // wizard
             {

@@ -1,10 +1,20 @@
 public class Warlock : SharedCharacterClasses
 {
     private string _warlockSkill1;
-    private string _warlockSkill2;
-    private string _warlockSkill3;
+    // private string _warlockSkill2;
+    // private string _warlockSkill3;
 
-    List<string> warlockSkills = new List<string>(){
+    public string GetWarlockSkill()
+    {
+        return _warlockSkill1;
+    }
+
+    public void SetWarlockSkill(int warlockSkill1)
+    {
+        _warlockSkill1 = _warlockSkills[warlockSkill1 - 1];
+    }
+
+    List<string> _warlockSkills = new List<string>(){
         "Eldritch Blast",
         "Pact Magic",
         "Invocations",
@@ -22,13 +32,22 @@ public class Warlock : SharedCharacterClasses
 
 
 
-    public string DisplayWarlockTraits()
+    public void DisplaySpecificSkills()
     {
-        return ("");
+        int num = 1;
+        foreach (string skill in _warlockSkills)
+        {
+            Console.WriteLine($"{num}. {skill}");
+            num++;
+        }
     }
-    public string DisplayWarlock()
+    public override void DisplayCharacter()
     {
-        return ("welcome to the Warlock class.");
+        Console.Clear(); //! this shows things in the base class
+        base.DisplayCharacter();
+        Console.WriteLine($"");
+        Console.WriteLine($"Below are items that are specific to the warlock class");
+        Console.WriteLine($"Warlock specific skill: {_warlockSkill1}");
     }
 
 }
