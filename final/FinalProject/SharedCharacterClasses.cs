@@ -1,6 +1,6 @@
 public class SharedCharacterClasses
 {
-        List<string> dndInventory = new List<string>() {
+    List<string> dndInventory = new List<string>() {
             "Potion of Healing",
             "Torch",
             "Climbing Gear",
@@ -25,7 +25,7 @@ public class SharedCharacterClasses
             "Immovable Rod"
         };
 
-        List<string> dndSkills = new List<string>() {
+    List<string> dndSkills = new List<string>() {
             "Acrobatics",
             "Animal Handling",
             "Arcana",
@@ -46,7 +46,7 @@ public class SharedCharacterClasses
             "Survival"
         };
 
-        List<string> dndSavingThrows = new List<string>() {
+    List<string> dndSavingThrows = new List<string>() {
             "Strength",
             "Dexterity",
             "Constitution",
@@ -55,7 +55,7 @@ public class SharedCharacterClasses
             "Charisma",
         };
 
-        List<string> dndAbilities =new List<string>() {
+    List<string> dndAbilities = new List<string>() {
             "Strength",
             "Dexterity",
             "Constitution",
@@ -67,7 +67,8 @@ public class SharedCharacterClasses
     private string _race { get; set; }
     private string _background { get; set; }
     private string _inventory { get; set; }
-    private string _skill1 {get; set;}
+    private string _skill1 { get; set; }
+    private string _specificSkill { get; set; }
 
     Random rand = new Random();
     public SharedCharacterClasses(string characterName, string race, string background) //window from program
@@ -97,14 +98,15 @@ public class SharedCharacterClasses
         Console.WriteLine($"Universal Skill: {_skill1}");
     }
 
-    // public void AddToInventory(string item)
+    // public virtual void DisplaySpecificSkills()
     // {
-    //     _inventory.Add(item);
-    // }
+    //     int num = 1;
+    //     foreach (string skill in _bardSkills)
+    //     {
+    //         Console.WriteLine($"{num}. {skill}");
+    //         num++;
+    //     }
 
-    // public void RemoveFromInventory(string item)
-    // {
-    //     _inventory.Remove(item);
     // }
 
 
