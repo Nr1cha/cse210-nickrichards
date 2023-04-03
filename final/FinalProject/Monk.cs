@@ -1,71 +1,31 @@
 public class Monk : SharedCharacterClasses
 {
-            List<string> dndInventory = new List<string>() {
-            "Potion of Healing",
-            "Torch",
-            "Climbing Gear",
-            "Grappling Hook",
-            "Spyglass",
-            "Lockpicks",
-            "Shovel",
-            "Lantern",
-            "Waterskin",
-            "Flint and Steel",
-            "Bedroll",
-            "Quill and Ink",
-            "Spellbook",
-            "Potion of Invisibility",
-            "Antitoxin",
-            "Wand of Magic Missiles",
-            "Ring of Protection",
-            "Cloak of Elvenkind",
-            "Bag of Tricks",
-            "Portable Ram",
-            "Decanter of Endless Water",
-            "Immovable Rod"
-        };
 
-        List<string> dndSkills = new List<string>() {
-            "Acrobatics",
-            "Animal Handling",
-            "Arcana",
-            "Athletics",
-            "Deception",
-            "History",
-            "Insight",
-            "Intimidation",
-            "Investigation",
-            "Medicine",
-            "Nature",
-            "Perception",
-            "Performance",
-            "Persuasion",
-            "Religion",
-            "Sleight of Hand",
-            "Stealth",
-            "Survival"
-        };
-
-        List<string> dndSavingThrows = new List<string>() {
-            "Strength",
-            "Dexterity",
-            "Constitution",
-            "Inteligence",
-            "Wisdom",
-            "Charisma",
-        };
-
-        List<string> dndAbilities =new List<string>() {
-            "Strength",
-            "Dexterity",
-            "Constitution",
-            "Intelligence",
-            "Wisdom",
-            "Charisma",
-        };
     private string _monkSkill1;
-    private string _monkSkill2;
-    private string _monkSkill3;
+    // private string _monkSkill2;
+    // private string _monkSkill3;
+
+    public string GetMonkSkill()
+    {
+        return _monkSkill1;
+    }
+    public void SetMonkSkill(int monkSkill1)
+    {
+        _monkSkill1 = _monkSkills[monkSkill1 - 1];
+    }
+
+    List<string> _monkSkills = new List<string>() {
+        "Unarmored Defense",
+        "Martial Arts",
+        "Ki",
+        "Unarmored Movement",
+        "Deflect Missiles",
+        "Slow Fall",
+        "Stunning Strike",
+        "Evasion",
+        "Stillness of Mind",
+        "Diamond Soul"
+    };
 
     public Monk(string characterName, string race, string background)
     : base(characterName, race, background)
@@ -76,12 +36,21 @@ public class Monk : SharedCharacterClasses
 
 
 
-    public string DisplayMonkTraits()
+    public void DisplaySpecificSkills()
     {
-        return ("");
+        int num = 1;
+        foreach (string skill in _monkSkills)
+        {
+            Console.WriteLine($"{num}. {skill}");
+            num++;
+        }
     }
-    public string DisplayMonk()
+    public override void DisplayCharacter()
     {
-        return ("welcome to the Monk class.");
+        Console.Clear(); //! this shows things in the base class
+        base.DisplayCharacter();
+        Console.WriteLine($"");
+        Console.WriteLine($"Below are items that are specific to the monk class");
+        Console.WriteLine($"Monk specific skill: {_monkSkill1}");
     }
 }

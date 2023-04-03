@@ -98,8 +98,16 @@ class Program
             }
             else if (userInput == 5) //monk
             {
+                Monk monk = (Monk)QuestionsForClass(typeof(Monk));
 
-                Thread.Sleep(2000);
+                Clear();
+                WriteLine($"Skills specific to the monk. \n");
+                monk.DisplaySpecificSkills();
+                WriteLine($"\nplease select one skill for this character: ");
+                int monkPick = int.Parse(ReadLine());
+                monk.SetMonkSkill(monkPick); //! monk specific skill
+                monk.DisplayCharacter(); //! random skill from base
+                ReadKey();
             }
             else if (userInput == 6) //ranger
             {
