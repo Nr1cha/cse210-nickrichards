@@ -24,7 +24,7 @@ class Program
     static void Main(string[] args)
     {
 
-        int userInput; //number input from user
+        int userInput;
         do
         {
             Clear();
@@ -53,11 +53,11 @@ class Program
                 barbarian.DisplaySpecificSkills();
                 WriteLine($"\nplease pick one skill for this character: ");
                 int barbPick = int.Parse(ReadLine());
-                barbarian.SetBarbarianSkill(barbPick); //! barbarian specific skill
-                barbarian.DisplayCharacter(); //! random skill from base
+                barbarian.SetBarbarianSkill(barbPick);
+                barbarian.DisplayCharacter();
                 ReadKey();
             }
-            else if (userInput == 2) // below is for testing the call out to the other class methods
+            else if (userInput == 2)
             {
                 Bard bard = (Bard)QuestionsForClass(typeof(Bard));
 
@@ -66,11 +66,11 @@ class Program
                 bard.DisplaySpecificSkills();
                 WriteLine($"\nplease select one skill for this character: ");
                 int bardPick = int.Parse(ReadLine());
-                bard.SetBardSkill(bardPick); //! bard specific skill
-                bard.DisplayCharacter(); //! random skill from base
+                bard.SetBardSkill(bardPick);
+                bard.DisplayCharacter();
                 ReadKey();
             }
-            else if (userInput == 3) //cleric
+            else if (userInput == 3)
             {
                 Cleric cleric = (Cleric)QuestionsForClass(typeof(Cleric));
 
@@ -79,11 +79,11 @@ class Program
                 cleric.DisplaySpecificSkills();
                 WriteLine($"\nplease select one skill for this character: ");
                 int clericPick = int.Parse(ReadLine());
-                cleric.SetClericSkill(clericPick); //! cleric specific skill
-                cleric.DisplayCharacter(); //! random skill from base
+                cleric.SetClericSkill(clericPick);
+                cleric.DisplayCharacter();
                 ReadKey();
             }
-            else if (userInput == 4) // druid
+            else if (userInput == 4)
             {
                 Druid druid = (Druid)QuestionsForClass(typeof(Druid));
 
@@ -92,11 +92,11 @@ class Program
                 druid.DisplaySpecificSkills();
                 WriteLine($"\nplease select one skill for this character: ");
                 int druidPick = int.Parse(ReadLine());
-                druid.SetDruidSkill(druidPick); //! druid specific skill
-                druid.DisplayCharacter(); //! random skill from base
+                druid.SetDruidSkill(druidPick);
+                druid.DisplayCharacter();
                 ReadKey();
             }
-            else if (userInput == 5) //monk
+            else if (userInput == 5)
             {
                 Monk monk = (Monk)QuestionsForClass(typeof(Monk));
 
@@ -105,11 +105,11 @@ class Program
                 monk.DisplaySpecificSkills();
                 WriteLine($"\nplease select one skill for this character: ");
                 int monkPick = int.Parse(ReadLine());
-                monk.SetMonkSkill(monkPick); //! monk specific skill
-                monk.DisplayCharacter(); //! random skill from base
+                monk.SetMonkSkill(monkPick);
+                monk.DisplayCharacter();
                 ReadKey();
             }
-            else if (userInput == 6) //ranger
+            else if (userInput == 6)
             {
                 Ranger ranger = (Ranger)QuestionsForClass(typeof(Ranger));
 
@@ -118,11 +118,11 @@ class Program
                 ranger.DisplaySpecificSkills();
                 WriteLine($"\nplease select one skill for this character: ");
                 int rangerPick = int.Parse(ReadLine());
-                ranger.SetRangerSkill(rangerPick); //! ranger specific skill
-                ranger.DisplayCharacter(); //! random skill from base
+                ranger.SetRangerSkill(rangerPick);
+                ranger.DisplayCharacter();
                 ReadKey();
             }
-            else if (userInput == 7) //warlock
+            else if (userInput == 7)
             {
                 Warlock warlock = (Warlock)QuestionsForClass(typeof(Warlock));
 
@@ -131,11 +131,11 @@ class Program
                 warlock.DisplaySpecificSkills();
                 WriteLine($"\nplease select one skill for this character: ");
                 int warlockPick = int.Parse(ReadLine());
-                warlock.SetWarlockSkill(warlockPick); //! warlock specific skill
-                warlock.DisplayCharacter(); //! random skill from base
+                warlock.SetWarlockSkill(warlockPick);
+                warlock.DisplayCharacter();
                 ReadKey();
             }
-            else if (userInput == 8) // wizard
+            else if (userInput == 8)
             {
                 Wizard wizard = (Wizard)QuestionsForClass(typeof(Wizard));
 
@@ -144,8 +144,8 @@ class Program
                 wizard.DisplaySpecificSkills();
                 WriteLine($"\nplease select one skill for this character: ");
                 int wizardPick = int.Parse(ReadLine());
-                wizard.SetWizardSkill(wizardPick); //! wizard specific skill
-                wizard.DisplayCharacter(); //! random skill from base
+                wizard.SetWizardSkill(wizardPick);
+                wizard.DisplayCharacter();
                 ReadKey();
             }
         }
