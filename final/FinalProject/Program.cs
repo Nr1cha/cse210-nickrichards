@@ -82,13 +82,19 @@ class Program
                 cleric.SetClericSkill(clericPick); //! cleric specific skill
                 cleric.DisplayCharacter(); //! random skill from base
                 ReadKey();
-
-                ReadKey();
             }
             else if (userInput == 4) // druid
             {
+                Druid druid = (Druid)QuestionsForClass(typeof(Druid));
 
-                Thread.Sleep(2000);
+                Clear();
+                WriteLine($"Skills specific to the druid. \n");
+                druid.DisplaySpecificSkills();
+                WriteLine($"\nplease select one skill for this character: ");
+                int druidPick = int.Parse(ReadLine());
+                druid.SetDruidSkill(druidPick); //! druid specific skill
+                druid.DisplayCharacter(); //! random skill from base
+                ReadKey();
             }
             else if (userInput == 5) //monk
             {

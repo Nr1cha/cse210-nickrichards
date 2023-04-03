@@ -1,8 +1,18 @@
 public class Druid : SharedCharacterClasses
 {
     private string _druidSkill1;
-    private string _druidSkill2;
-    private string _druidSkill3;
+    // private string _druidSkill2;
+    // private string _druidSkill3;
+
+    public string GetDruidSkill()
+        {
+            return _druidSkill1;
+        }
+
+    public void SetDruidSkill(int druidSkill1)
+    {
+        _druidSkill1 = _druidSkills[druidSkill1 - 1];
+    }
 
     List<string> _druidSkills = new List<string>() {
         "Druidic",
@@ -23,16 +33,21 @@ public class Druid : SharedCharacterClasses
 
     }
 
-
-
-
-
-    public string DisplayDruidTraits()
+    public void DisplaySpecificSkills()
     {
-        return ("");
+        int num = 1;
+        foreach (string skill in _druidSkills)
+        {
+            Console.WriteLine($"{num}. {skill}");
+            num++;
+        }
     }
-    public string DisplayDruid()
+    public override void DisplayCharacter()
     {
-        return ("welcome to the Druid class.");
+        Console.Clear(); //! this shows things in the base class
+        base.DisplayCharacter();
+        Console.WriteLine($"");
+        Console.WriteLine($"Below are items that are specific to the druid class");
+        Console.WriteLine($"Druid specific skill: {_druidSkill1}");
     }
 }
