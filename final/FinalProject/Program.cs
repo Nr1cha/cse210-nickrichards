@@ -47,7 +47,7 @@ class Program
 
             {
                 Barbarian barbarian = (Barbarian)QuestionsForClass(typeof(Barbarian));
-                
+
                 Clear();
                 WriteLine($"Skills specific to the barbarian. \n");
                 barbarian.DisplaySpecificSkills();
@@ -66,50 +66,48 @@ class Program
                 bard.DisplaySpecificSkills();
                 WriteLine($"\nplease select one skill for this character: ");
                 int bardPick = int.Parse(ReadLine());
-                bard.SetBarbarianSkill(bardPick); //! bard specific skill
+                bard.SetBardSkill(bardPick); //! bard specific skill
                 bard.DisplayCharacter(); //! random skill from base
                 ReadKey();
             }
-            else if (userInput == 3)
+            else if (userInput == 3) //cleric
             {
-                // Cleric welcomeCleric = new Cleric();
-                // string welcome = welcomeCleric.DisplayCleric();
-                // Console.WriteLine(welcome);
+                Cleric cleric = (Cleric)QuestionsForClass(typeof(Cleric));
+
+                Clear();
+                WriteLine($"Skills specific to the cleric. \n");
+                cleric.DisplaySpecificSkills();
+                WriteLine($"\nplease select one skill for this character: ");
+                int clericPick = int.Parse(ReadLine());
+                cleric.SetClericSkill(clericPick); //! cleric specific skill
+                cleric.DisplayCharacter(); //! random skill from base
+                ReadKey();
+
+                ReadKey();
+            }
+            else if (userInput == 4) // druid
+            {
+
                 Thread.Sleep(2000);
             }
-            else if (userInput == 4)
+            else if (userInput == 5) //monk
             {
-                // Druid welcomeDruid = new Druid();
-                // string welcome = welcomeDruid.DisplayDruid();
-                // Console.WriteLine(welcome);
+
                 Thread.Sleep(2000);
             }
-            else if (userInput == 5)
+            else if (userInput == 6) //ranger
             {
-                // Monk welcomeMonk = new Monk();
-                // string welcome = welcomeMonk.DisplayMonk();
-                // Console.WriteLine(welcome);
+
                 Thread.Sleep(2000);
             }
-            else if (userInput == 6)
+            else if (userInput == 7) //warlock
             {
-                // Ranger welcomeRanger = new Ranger();
-                // string welcome = welcomeRanger.DisplayRanger();
-                // Console.WriteLine(welcome);
+
                 Thread.Sleep(2000);
             }
-            else if (userInput == 7)
+            else if (userInput == 8) // wizard
             {
-                // Warlock welcomeWarlock = new Warlock();
-                // string welcome = welcomeWarlock.DisplayWarlock();
-                // Console.WriteLine(welcome);
-                Thread.Sleep(2000);
-            }
-            else if (userInput == 8)
-            {
-                // Wizard welcomeWizard = new Wizard();
-                // string welcome = welcomeWizard.DisplayWizard();
-                // Console.WriteLine(welcome);
+
                 Thread.Sleep(2000);
             }
         }

@@ -10,7 +10,7 @@ public class Bard : SharedCharacterClasses
     {
         return _bardSkill1;
     }
-    public void SetBarbarianSkill(int bardSkill1)
+    public void SetBardSkill(int bardSkill1)
     {
         _bardSkill1 = _bardSkills[bardSkill1 - 1];
     }

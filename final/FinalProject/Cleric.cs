@@ -40,14 +40,12 @@ public class Cleric : SharedCharacterClasses
             num++;
         }
     }
-
-
-    public string DisplayClericTraits()
+    public override void DisplayCharacter()
     {
-        return ("");
-    }
-    public string DisplayCleric()
-    {
-        return ("welcome to the Cleric class.");
+        Console.Clear(); //! this shows things in the base class
+        base.DisplayCharacter();
+        Console.WriteLine($"");
+        Console.WriteLine($"Below are items that are specific to the cleric class");
+        Console.WriteLine($"Cleric specific skill: {_clericSkill1}");
     }
 }
