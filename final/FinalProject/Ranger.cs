@@ -1,10 +1,19 @@
 public class Ranger : SharedCharacterClasses
 {
     private string _rangerSkill1;
-    private string _rangerSkill2;
-    private string _rangerSkill3;
+    // private string _rangerSkill2;
+    // private string _rangerSkill3;
 
-    List<string> rangerSkills = new List<string>(){
+    public string GetRangerSkill()
+    {
+        return _rangerSkill1;
+    }
+    public void SetRangerSkill(int rangerSkill1)
+    {
+        _rangerSkill1 = _rangerSkills[rangerSkill1 - 1];
+    }
+
+    List<string> _rangerSkills = new List<string>(){
         "Favored Enemy",
         "Natural Explorer",
         "Primeval Awareness",
@@ -22,12 +31,21 @@ public class Ranger : SharedCharacterClasses
 
 
 
-    public string DisplayRangerTraits()
+    public void DisplaySpecificSkills()
     {
-        return ("");
+        int num = 1;
+        foreach (string skill in _rangerSkills)
+        {
+            Console.WriteLine($"{num}. {skill}");
+            num++;
+        }
     }
-    public string DisplayRanger()
+    public override void DisplayCharacter()
     {
-        return ("welcome to the Ranger class.");
+        Console.Clear(); //! this shows things in the base class
+        base.DisplayCharacter();
+        Console.WriteLine($"");
+        Console.WriteLine($"Below are items that are specific to the ranger class");
+        Console.WriteLine($"Ranger specific skill: {_rangerSkill1}");
     }
 }

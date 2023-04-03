@@ -111,8 +111,16 @@ class Program
             }
             else if (userInput == 6) //ranger
             {
+                Ranger ranger = (Ranger)QuestionsForClass(typeof(Ranger));
 
-                Thread.Sleep(2000);
+                Clear();
+                WriteLine($"Skills specific to the ranger. \n");
+                ranger.DisplaySpecificSkills();
+                WriteLine($"\nplease select one skill for this character: ");
+                int rangerPick = int.Parse(ReadLine());
+                ranger.SetRangerSkill(rangerPick); //! ranger specific skill
+                ranger.DisplayCharacter(); //! random skill from base
+                ReadKey();
             }
             else if (userInput == 7) //warlock
             {
