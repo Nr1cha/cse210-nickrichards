@@ -137,8 +137,16 @@ class Program
             }
             else if (userInput == 8) // wizard
             {
+                Wizard wizard = (Wizard)QuestionsForClass(typeof(Wizard));
 
-                Thread.Sleep(2000);
+                Clear();
+                WriteLine($"Skills specific to the wizard. \n");
+                wizard.DisplaySpecificSkills();
+                WriteLine($"\nplease select one skill for this character: ");
+                int wizardPick = int.Parse(ReadLine());
+                wizard.SetWizardSkill(wizardPick); //! wizard specific skill
+                wizard.DisplayCharacter(); //! random skill from base
+                ReadKey();
             }
         }
         while (userInput != 9);
