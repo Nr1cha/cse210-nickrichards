@@ -31,14 +31,9 @@ public class Cleric : SharedCharacterClasses
 
     }
 
-    public void DisplaySpecificSkills()
+    public override void DisplaySpecificSkills()
     {
-        int num = 1;
-        foreach (string skill in _clericSkills)
-        {
-            Console.WriteLine($"{num}. {skill}");
-            num++;
-        }
+        SharedCharacterClasses.DisplaySpecificSkillsStatic(_clericSkills);
     }
     public override void DisplayCharacter()
     {

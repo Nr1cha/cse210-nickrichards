@@ -2,8 +2,6 @@ public class Monk : SharedCharacterClasses
 {
 
     private string _monkSkill1;
-    // private string _monkSkill2;
-    // private string _monkSkill3;
 
     public string GetMonkSkill()
     {
@@ -30,20 +28,12 @@ public class Monk : SharedCharacterClasses
     public Monk(string characterName, string race, string background)
     : base(characterName, race, background)
     {
-        // Character specific items
 
     }
 
-
-
-    public void DisplaySpecificSkills()
+    public override void DisplaySpecificSkills()
     {
-        int num = 1;
-        foreach (string skill in _monkSkills)
-        {
-            Console.WriteLine($"{num}. {skill}");
-            num++;
-        }
+        SharedCharacterClasses.DisplaySpecificSkillsStatic(_monkSkills);
     }
     public override void DisplayCharacter()
     {
