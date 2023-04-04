@@ -2,7 +2,6 @@ public class Barbarian : SharedCharacterClasses
 {
     private string _barbarianS1;
 
-
     public string GetBarbarianSkill()
     {
         return _barbarianS1;
@@ -22,7 +21,7 @@ public class Barbarian : SharedCharacterClasses
         "Primal Path"
     };
 
-    Random rand = new Random();
+    // Random rand = new Random();
     
 
     public Barbarian(string characterName, string race, string background)
@@ -35,9 +34,9 @@ public class Barbarian : SharedCharacterClasses
     {
         SharedCharacterClasses.DisplaySpecificSkillsStatic(_barbarianSkills);
     }
-    public override void DisplayCharacter() //!random skill from base
+    public override void DisplayCharacter()
     {
-        Console.Clear(); //! this shows things in the base class
+        Console.Clear();
         base.DisplayCharacter();
         Console.WriteLine($"");
         Console.WriteLine($"Below are items that are specific to the barbarian class");

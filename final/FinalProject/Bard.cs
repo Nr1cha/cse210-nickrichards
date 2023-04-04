@@ -24,7 +24,6 @@ public class Bard : SharedCharacterClasses
         "Magical Secrets"
     };
 
-
     public Bard(string characterName, string race, string background)
     : base(characterName, race, background)
     {
@@ -35,10 +34,9 @@ public class Bard : SharedCharacterClasses
         SharedCharacterClasses.DisplaySpecificSkillsStatic(_bardSkills);
     }
 
-
-    public override void DisplayCharacter() //!random skill from base for this class
+    public override void DisplayCharacter()
     {
-        Console.Clear(); //! this shows things in the base class
+        Console.Clear();
         base.DisplayCharacter();
         Console.WriteLine($"");
         Console.WriteLine($"Below are items that are specific to the bard class");

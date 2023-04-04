@@ -32,7 +32,7 @@ public class Ranger : SharedCharacterClasses
     }
     public override void DisplayCharacter()
     {
-        Console.Clear(); //! this shows things in the base class
+        Console.Clear();
         base.DisplayCharacter();
         Console.WriteLine($"");
         Console.WriteLine($"Below are items that are specific to the ranger class");

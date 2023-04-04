@@ -12,7 +12,7 @@ public class Monk : SharedCharacterClasses
         _monkSkill1 = _monkSkills[monkSkill1 - 1];
     }
 
-    List<string> _monkSkills = new List<string>() {
+    private List<string> _monkSkills = new List<string>() {
         "Unarmored Defense",
         "Martial Arts",
         "Ki",

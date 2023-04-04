@@ -27,7 +27,6 @@ public class Druid : SharedCharacterClasses
     public Druid(string characterName, string race, string background)
     : base(characterName, race, background)
     {
-        // Character specific items
 
     }
 
@@ -37,7 +36,7 @@ public class Druid : SharedCharacterClasses
     }
     public override void DisplayCharacter()
     {
-        Console.Clear(); //! this shows things in the base class
+        Console.Clear();
         base.DisplayCharacter();
         Console.WriteLine($"");
         Console.WriteLine($"Below are items that are specific to the druid class");
