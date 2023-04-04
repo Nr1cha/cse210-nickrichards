@@ -74,7 +74,7 @@ public class SharedCharacterClasses
     private string _specificSkill { get; set; }
 
     Random rand = new Random();
-    public SharedCharacterClasses(string characterName, string race, string background) //window from program
+    public SharedCharacterClasses(string characterName, string race, string background)
     {
         _characterName = characterName;
         _background = background;

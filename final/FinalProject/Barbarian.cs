@@ -19,10 +19,7 @@ public class Barbarian : SharedCharacterClasses
         "Feral Instinct",
         "Brutal Critical",
         "Primal Path"
-    };
-
-    // Random rand = new Random();
-    
+    };    
 
     public Barbarian(string characterName, string race, string background)
         : base(characterName, race, background)
