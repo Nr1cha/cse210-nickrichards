@@ -1,6 +1,6 @@
 public class SharedCharacterClasses
 {
-    private List<string> _dndInventory = new List<string>() {
+    private List<string> _dndInventoryItem = new List<string>() {
             "Potion of Healing",
             "Torch",
             "Climbing Gear",
@@ -46,30 +46,30 @@ public class SharedCharacterClasses
             "Survival"
         };
 
-    private List<string> _dndSavingThrows = new List<string>() {
-            "Strength",
-            "Dexterity",
-            "Constitution",
-            "Inteligence",
-            "Wisdom",
-            "Charisma",
-        };
+    // private List<string> _dndSavingThrows = new List<string>() {
+    //         "Strength",
+    //         "Dexterity",
+    //         "Constitution",
+    //         "Inteligence",
+    //         "Wisdom",
+    //         "Charisma",
+    //     };
 
-    private List<string> _dndAbilities = new List<string>() {
-            "Strength",
-            "Dexterity",
-            "Constitution",
-            "Intelligence",
-            "Wisdom",
-            "Charisma",
-        };
+    // private List<string> _dndAbilities = new List<string>() {
+    //         "Strength",
+    //         "Dexterity",
+    //         "Constitution",
+    //         "Intelligence",
+    //         "Wisdom",
+    //         "Charisma",
+    //     };
 
     private List<string> _characterSkill = new List<string>();
 
     private string _characterName { get; set; }
     private string _race { get; set; }
     private string _background { get; set; }
-    private string _inventory { get; set; }
+    private string _inventoryItem { get; set; }
     private string _skill1 { get; set; }
     private string _specificSkill { get; set; }
 
@@ -83,8 +83,8 @@ public class SharedCharacterClasses
         int skillIndex = rand.Next(_dndSkills.Count);
         _skill1 = _dndSkills[skillIndex];
 
-        int inventoryIndex = rand.Next(_dndInventory.Count);
-        _inventory = _dndInventory[inventoryIndex];
+        int inventoryIndex = rand.Next(_dndInventoryItem.Count);
+        _inventoryItem = _dndInventoryItem[inventoryIndex];
     }
 
 
@@ -94,7 +94,7 @@ public class SharedCharacterClasses
         Console.WriteLine($"Background: {_background}");
         Console.WriteLine($"Race: {_race}\n");
         Console.WriteLine($"Below are items that any character can start with at random");
-        Console.WriteLine($"Inventory Item(s): {_inventory}");
+        Console.WriteLine($"Inventory Item(s): {_inventoryItem}");
         Console.WriteLine($"Universal Skill: {_skill1}");
     }
 
