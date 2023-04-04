@@ -1,8 +1,6 @@
 public class Wizard : SharedCharacterClasses
 {
     private string _wizardSkill1;
-    // private string _wizardSkill2;
-    // private string _wizardSkill3;
 
     public string GetWizardSkill()
     {
@@ -12,7 +10,7 @@ public class Wizard : SharedCharacterClasses
     {
         _wizardSkill1 = _wizardSkills[wizardSkill1 - 1];
     }
-    List<string> _wizardSkills = new List<string>(){
+    private List<string> _wizardSkills = new List<string>(){
         "Arcana",
         "Spellcasting",
         "Ritual Casting",
@@ -20,29 +18,19 @@ public class Wizard : SharedCharacterClasses
         "Spell Mastery"
     };
 
-
     public Wizard(string characterName, string race, string background)
     : base(characterName, race, background)
     {
-        // Character specific items
 
     }
 
-
-
-
-    public void DisplaySpecificSkills()
+    public override void DisplaySpecificSkills()
     {
-        int num = 1;
-        foreach (string skill in _wizardSkills)
-        {
-            Console.WriteLine($"{num}. {skill}");
-            num++;
-        }
+        SharedCharacterClasses.DisplaySpecificSkillsStatic(_wizardSkills);
     }
     public override void DisplayCharacter()
     {
-        Console.Clear(); //! this shows things in the base class
+        Console.Clear();
         base.DisplayCharacter();
         Console.WriteLine($"");
         Console.WriteLine($"Below are items that are specific to the wizard class");
