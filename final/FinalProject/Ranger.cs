@@ -34,8 +34,7 @@ public class Ranger : SharedCharacterClasses
     {
         Console.Clear();
         base.DisplayCharacter();
-        Console.WriteLine($"");
-        Console.WriteLine($"Below are items that are specific to the ranger class");
-        Console.WriteLine($"Ranger specific skill: {_rangerSkill1}");
+        Console.WriteLine($"Ranger specific skill: {_rangerSkill1}\n");
+        Console.WriteLine($"Press enter to return to the main menu.");
     }
 }

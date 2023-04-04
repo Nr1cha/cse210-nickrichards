@@ -35,8 +35,7 @@ public class Barbarian : SharedCharacterClasses
     {
         Console.Clear();
         base.DisplayCharacter();
-        Console.WriteLine($"");
-        Console.WriteLine($"Below are items that are specific to the barbarian class");
-        Console.WriteLine($"Barbarian specific skill: {_barbarianS1}");
+        Console.WriteLine($"Barbarian specific skill: {_barbarianS1}\n");
+        Console.WriteLine($"Press enter to return to the main menu.");
     }
 }

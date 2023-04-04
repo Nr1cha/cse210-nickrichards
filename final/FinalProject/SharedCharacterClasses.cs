@@ -46,24 +46,6 @@ public class SharedCharacterClasses
             "Survival"
         };
 
-    // private List<string> _dndSavingThrows = new List<string>() {
-    //         "Strength",
-    //         "Dexterity",
-    //         "Constitution",
-    //         "Inteligence",
-    //         "Wisdom",
-    //         "Charisma",
-    //     };
-
-    // private List<string> _dndAbilities = new List<string>() {
-    //         "Strength",
-    //         "Dexterity",
-    //         "Constitution",
-    //         "Intelligence",
-    //         "Wisdom",
-    //         "Charisma",
-    //     };
-
     private List<string> _characterSkill = new List<string>();
 
     private string _characterName { get; set; }
@@ -93,8 +75,7 @@ public class SharedCharacterClasses
         Console.WriteLine($"Character Name: {_characterName}");
         Console.WriteLine($"Background: {_background}");
         Console.WriteLine($"Race: {_race}\n");
-        Console.WriteLine($"Below are items that any character can start with at random");
-        Console.WriteLine($"Inventory Item(s): {_inventoryItem}");
+        Console.WriteLine($"Inventory Item(s): {_inventoryItem}\n");
         Console.WriteLine($"Universal Skill: {_skill1}");
     }
 

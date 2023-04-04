@@ -4,11 +4,9 @@ using static System.Console;
 
 class Program
 {
-
     static SharedCharacterClasses QuestionsForClass(Type clazz)
     {
         Clear();
-        // * work on the input for the name, race and background
         WriteLine($"What is your Characters name?");
         string charName = ReadLine();
 
@@ -43,8 +41,6 @@ class Program
             userInput = int.Parse(ReadLine());
 
             if (userInput == 1)
-
-
             {
                 Barbarian barbarian = (Barbarian)QuestionsForClass(typeof(Barbarian));
 

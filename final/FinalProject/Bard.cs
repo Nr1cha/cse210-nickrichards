@@ -38,8 +38,7 @@ public class Bard : SharedCharacterClasses
     {
         Console.Clear();
         base.DisplayCharacter();
-        Console.WriteLine($"");
-        Console.WriteLine($"Below are items that are specific to the bard class");
-        Console.WriteLine($"Barbarian specific skill: {_bardSkill1}");
+        Console.WriteLine($"Barbarian specific skill: {_bardSkill1}\n");
+        Console.WriteLine($"Press enter to return to the main menu.");
     }
 }

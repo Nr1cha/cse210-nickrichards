@@ -1,8 +1,6 @@
 public class Cleric : SharedCharacterClasses
 {
     private string _clericSkill1;
-    // private string _clericSkill2;
-    // private string _clericSkill3;
 
     public string GetClericSkill()
     {
@@ -27,7 +25,6 @@ public class Cleric : SharedCharacterClasses
     public Cleric(string characterName, string race, string background)
         : base(characterName, race, background)
     {
-        // Character specific items
 
     }
 
@@ -37,10 +34,9 @@ public class Cleric : SharedCharacterClasses
     }
     public override void DisplayCharacter()
     {
-        Console.Clear(); //! this shows things in the base class
+        Console.Clear();
         base.DisplayCharacter();
-        Console.WriteLine($"");
-        Console.WriteLine($"Below are items that are specific to the cleric class");
-        Console.WriteLine($"Cleric specific skill: {_clericSkill1}");
+        Console.WriteLine($"Cleric specific skill: {_clericSkill1}\n");
+        Console.WriteLine($"Press enter to return to the main menu.");
     }
 }

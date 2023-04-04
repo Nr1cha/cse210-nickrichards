@@ -34,9 +34,8 @@ public class Warlock : SharedCharacterClasses
     {
         Console.Clear();
         base.DisplayCharacter();
-        Console.WriteLine($"");
-        Console.WriteLine($"Below are items that are specific to the warlock class");
-        Console.WriteLine($"Warlock specific skill: {_warlockSkill1}");
+        Console.WriteLine($"Warlock specific skill: {_warlockSkill1}\n");
+        Console.WriteLine($"Press enter to return to the main menu.");
     }
 
 }

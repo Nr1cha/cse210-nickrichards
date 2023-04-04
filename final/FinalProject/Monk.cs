@@ -37,10 +37,9 @@ public class Monk : SharedCharacterClasses
     }
     public override void DisplayCharacter()
     {
-        Console.Clear(); //! this shows things in the base class
+        Console.Clear();
         base.DisplayCharacter();
-        Console.WriteLine($"");
-        Console.WriteLine($"Below are items that are specific to the monk class");
-        Console.WriteLine($"Monk specific skill: {_monkSkill1}");
+        Console.WriteLine($"Monk specific skill: {_monkSkill1}\n");
+        Console.WriteLine($"Press enter to return to the main menu.");
     }
 }

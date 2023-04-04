@@ -32,8 +32,7 @@ public class Wizard : SharedCharacterClasses
     {
         Console.Clear();
         base.DisplayCharacter();
-        Console.WriteLine($"");
-        Console.WriteLine($"Below are items that are specific to the wizard class");
-        Console.WriteLine($"Wizard specific skill: {_wizardSkill1}");
+        Console.WriteLine($"Wizard specific skill: {_wizardSkill1}\n");
+        Console.WriteLine($"Press enter to return to the main menu.");
     }
 }

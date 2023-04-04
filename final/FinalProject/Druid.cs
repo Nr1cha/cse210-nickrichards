@@ -38,8 +38,7 @@ public class Druid : SharedCharacterClasses
     {
         Console.Clear();
         base.DisplayCharacter();
-        Console.WriteLine($"");
-        Console.WriteLine($"Below are items that are specific to the druid class");
-        Console.WriteLine($"Druid specific skill: {_druidSkill1}");
+        Console.WriteLine($"Druid specific skill: {_druidSkill1}\n");
+        Console.WriteLine($"Press enter to return to the main menu.");
     }
 }
