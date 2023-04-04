@@ -1,20 +1,18 @@
 public class Druid : SharedCharacterClasses
 {
     private string _druidSkill1;
-    // private string _druidSkill2;
-    // private string _druidSkill3;
 
     public string GetDruidSkill()
-        {
-            return _druidSkill1;
-        }
+    {
+        return _druidSkill1;
+    }
 
     public void SetDruidSkill(int druidSkill1)
     {
         _druidSkill1 = _druidSkills[druidSkill1 - 1];
     }
 
-    List<string> _druidSkills = new List<string>() {
+    private List<string> _druidSkills = new List<string>() {
         "Druidic",
         "Spellcasting",
         "Wild Shape",
@@ -33,14 +31,9 @@ public class Druid : SharedCharacterClasses
 
     }
 
-    public void DisplaySpecificSkills()
+    public override void DisplaySpecificSkills()
     {
-        int num = 1;
-        foreach (string skill in _druidSkills)
-        {
-            Console.WriteLine($"{num}. {skill}");
-            num++;
-        }
+        SharedCharacterClasses.DisplaySpecificSkillsStatic(_druidSkills);
     }
     public override void DisplayCharacter()
     {

@@ -1,8 +1,7 @@
 public class Barbarian : SharedCharacterClasses
 {
     private string _barbarianS1;
-    // private string BarbarianSkill2 { get; set; }
-    // private string BarbarianSkill3 { get; set; }
+
 
     public string GetBarbarianSkill()
     {
@@ -26,23 +25,15 @@ public class Barbarian : SharedCharacterClasses
     Random rand = new Random();
     
 
-    public Barbarian(string characterName, string race, string background) //all items to be shown
-        : base(characterName, race, background) // what its going to show from the base class
+    public Barbarian(string characterName, string race, string background)
+        : base(characterName, race, background)
     {
-        // Character specific items
-        // these are items that are different than what's in the base class
-
 
     }
 
-    public void DisplaySpecificSkills()
+    public override void DisplaySpecificSkills()
     {
-        int num = 1;
-        foreach(string skill in _barbarianSkills)
-        {
-            Console.WriteLine($"{num}. {skill}");
-            num++;
-        }
+        SharedCharacterClasses.DisplaySpecificSkillsStatic(_barbarianSkills);
     }
     public override void DisplayCharacter() //!random skill from base
     {

@@ -3,8 +3,6 @@ public class Bard : SharedCharacterClasses
 
 
     private string _bardSkill1;
-    // private string _bardSkill2;
-    // private string _bardSkill3;
 
     public string GetBardSkill()
     {
@@ -16,7 +14,7 @@ public class Bard : SharedCharacterClasses
     }
 
 
-    List<string> _bardSkills = new List<string>(){
+    private List<string> _bardSkills = new List<string>(){
         "Bardic Inspiration",
         "Spellcasting",
         "Jack of All Trades",
@@ -30,21 +28,14 @@ public class Bard : SharedCharacterClasses
     public Bard(string characterName, string race, string background)
     : base(characterName, race, background)
     {
-        // Character specific items
 
     }
-
-
-
-    public void DisplaySpecificSkills()
+    public override void DisplaySpecificSkills()
     {
-        int num = 1;
-        foreach (string skill in _bardSkills)
-        {
-            Console.WriteLine($"{num}. {skill}");
-            num++;
-        }
+        SharedCharacterClasses.DisplaySpecificSkillsStatic(_bardSkills);
     }
+
+
     public override void DisplayCharacter() //!random skill from base for this class
     {
         Console.Clear(); //! this shows things in the base class
